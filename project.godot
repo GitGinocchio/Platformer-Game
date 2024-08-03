@@ -10,6 +10,6 @@ config_version=5
 
 [application]
 
-config/name="Gioco di Giulio e Deniel"
+config/name="Godot-Dungeon-Fight-Game"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
