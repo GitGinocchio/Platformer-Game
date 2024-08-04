@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1upepw2u1175"
-path="res://.godot/imported/mockup_purple.png-dd1a461d72443aac95a77bbcd4c350d2.ctex"
+uid="uid://dqi5hnfagmnxy"
+path="res://.godot/imported/mockup_gray.png-3aad9b9cf092271f12e1268b8ca5a958.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://rawassets/Map/Mockups/mockup_purple.png"
-dest_files=["res://.godot/imported/mockup_purple.png-dd1a461d72443aac95a77bbcd4c350d2.ctex"]
+source_file="res://1rawassets/Map/Mockups/mockup_gray.png"
+dest_files=["res://.godot/imported/mockup_gray.png-3aad9b9cf092271f12e1268b8ca5a958.ctex"]
 
 [params]
 

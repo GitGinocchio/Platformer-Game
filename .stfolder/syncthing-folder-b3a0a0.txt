@@ -1,0 +1,5 @@
+# This directory is a Syncthing folder marker.
+# Do not delete.
+
+folderID: Godot-Dungeon-Fight-Game
+created: 2024-08-04T02:07:17+02:00
