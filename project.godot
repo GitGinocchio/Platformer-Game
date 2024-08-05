@@ -10,13 +10,8 @@ config_version=5
 
 [application]
 
-<<<<<<< HEAD
 config/name="Platformer Game"
 run/main_scene="res://scenes/game.tscn"
-=======
-config/name="Godot-Dungeon-Fight-Game"
-run/main_scene="res://scenes/map_1.tscn"
->>>>>>> ee0df7ec5b54710ff0cf766bc46b6aeecbb71467
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bsivvnhh35cwo"]
 
-[ext_resource type="Texture2D" uid="uid://ce6jo8qkh4ndh" path="res://assets/Terrain/Terrain (16x16).png" id="1_eyor1"]
-[ext_resource type="Texture2D" uid="uid://demcwycpcqvlo" path="res://assets/Background/Green.png" id="1_wh0im"]
+[ext_resource type="Texture2D" uid="uid://1r5k812oi3ok" path="res://assets/Terrain/Terrain (16x16).png" id="1_eyor1"]
+[ext_resource type="Texture2D" uid="uid://c6o3fx2rj4wly" path="res://assets/Background/Green.png" id="1_wh0im"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sqcec"]
 texture = ExtResource("1_eyor1")
@@ -153,15 +153,12 @@ texture = ExtResource("1_eyor1")
 [sub_resource type="TileSet" id="TileSet_ml55k"]
 sources/0 = SubResource("TileSetAtlasSource_sqcec")
 
-[node name="Node" type="Node"]
+[node name="Map1" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_right = 1160.0
+offset_bottom = 672.0
 texture = ExtResource("1_wh0im")
 stretch_mode = 1
 
