@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [gd_scene load_steps=3 format=3 uid="uid://bfpvbyp3x25og"]
 
 [ext_resource type="PackedScene" uid="uid://b3jceichgrcoh" path="res://scenes/character_1.tscn" id="1_yuc6k"]
@@ -17,3 +18,15 @@ position = Vector2(0, -112)
 
 [node name="groundCollision" type="CollisionShape2D" parent="ground"]
 shape = SubResource("WorldBoundaryShape2D_jcgio")
+=======
+[gd_scene load_steps=2 format=3 uid="uid://bot82w3jv06dx"]
+
+[ext_resource type="PackedScene" uid="uid://bsivvnhh35cwo" path="res://scenes/map_1.tscn" id="1_8f7vv"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 320)
+
+[node name="Map1" parent="." instance=ExtResource("1_8f7vv")]
+>>>>>>> ee0df7ec5b54710ff0cf766bc46b6aeecbb71467
