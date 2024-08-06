@@ -14,21 +14,11 @@ extends CharacterBody2D
 @export var WALL_SLIDE_DECELERATION = 500.0
 @export var WALL_JUMP_HORIZONTAL_VELOCITY = 200.0
 
-
 @onready var sprite = $Sprite
 
-var double_jumped : bool = false
-var wall_sticking : bool = false
+var double_jumped = false
+var wall_sticking = false
 
-func _ready() -> void:
-	pass
-
-func _process(delta : float) -> void:
-	pass
-	
-func _on_sprite_animation_changed() -> void:
-	pass
-	
 func _on_sprite_animation_finished() -> void:
 	if sprite.animation == 'jump':
 		velocity.x = 0
@@ -36,7 +26,7 @@ func _on_sprite_animation_finished() -> void:
 	elif sprite.animation == 'doublejump':
 		velocity.x = 0
 		sprite.play('fall')
-
+		
 func _physics_process(delta: float) -> void:
 	if is_on_wall_only():
 		wall_sticking = true
@@ -62,8 +52,6 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("left", "right")
 	
 	if direction:
-		print(direction, wall_sticking, sprite.flip_h, velocity.x)
-		
 		if direction == -1:
 			#if Input.is_action_just_pressed('jump'):
 				#velocity.x = 0
@@ -72,7 +60,7 @@ func _physics_process(delta: float) -> void:
 			wall_sticking = false
 			sprite.flip_h = true
 	
-		else: #direction == 1
+		else:
 			#if Input.is_action_just_pressed('jump'):
 				#velocity.x = 0
 			#else:
@@ -80,7 +68,7 @@ func _physics_process(delta: float) -> void:
 			wall_sticking = false
 			sprite.flip_h = false
 				
-		print(direction, wall_sticking, sprite.flip_h, velocity.x)
+		#print(direction, wall_sticking, sprite.flip_h, velocity.x)
 
 		if sprite.animation not in ['run','jump','fall', 'doublejump','walljump']:
 			sprite.play('run')
