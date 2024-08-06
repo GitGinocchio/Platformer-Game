@@ -17,7 +17,7 @@ extends CharacterBody2D
 @onready var sprite = $Sprite
 
 var double_jumped = false
-var wall_sticking = false
+var jumped_from_wall = false
 
 func _on_sprite_animation_finished() -> void:
 	if sprite.animation == 'jump':
@@ -29,7 +29,6 @@ func _on_sprite_animation_finished() -> void:
 		
 func _physics_process(delta: float) -> void:
 	if is_on_wall_only():
-		wall_sticking = true
 		velocity.x = 0
 		if velocity.y < 0: 
 			velocity.y = 0 #move_toward(velocity.y, 0, WALL_SLIDE_DECELERATION * delta)
@@ -40,10 +39,8 @@ func _physics_process(delta: float) -> void:
 	elif is_on_floor():
 		if sprite.animation not in ['run','idle']:
 			sprite.play('idle')
-		wall_sticking = false
 		double_jumped = false
 	else:
-		wall_sticking = false
 		velocity.y += GRAVITY * delta
 		if sprite.animation not in ['fall','jump','doublejump']:
 			sprite.play('fall')
@@ -53,23 +50,21 @@ func _physics_process(delta: float) -> void:
 	
 	if direction:
 		if direction == -1:
-			#if Input.is_action_just_pressed('jump'):
-				#velocity.x = 0
-			#else:
-			velocity.x = direction * SPEED
-			wall_sticking = false
-			sprite.flip_h = true
+			if is_on_wall_only() and sprite.flip_h:
+				print('ciao')
+				velocity.x = 0
+			else:
+				velocity.x = direction * SPEED
+				sprite.flip_h = true
 	
 		else:
-			#if Input.is_action_just_pressed('jump'):
-				#velocity.x = 0
-			#else:
-			velocity.x = direction * SPEED
-			wall_sticking = false
-			sprite.flip_h = false
+			if is_on_wall_only() and not sprite.flip_h:
+				print('ciao')
+				velocity.x = 0
+			else:
+				velocity.x = direction * SPEED
+				sprite.flip_h = false
 				
-		#print(direction, wall_sticking, sprite.flip_h, velocity.x)
-
 		if sprite.animation not in ['run','jump','fall', 'doublejump','walljump']:
 			sprite.play('run')
 	else:
@@ -88,13 +83,10 @@ func _physics_process(delta: float) -> void:
 			velocity.y = DOUBLE_JUMP_VELOCITY
 			double_jumped = true
 		elif is_on_wall_only():
-			velocity.x = 0
-			
 			velocity.x = WALL_JUMP_HORIZONTAL_VELOCITY * (1 if sprite.flip_h else -1)
 			velocity.y = JUMP_VELOCITY
 			
 			sprite.flip_h = not sprite.flip_h
-			wall_sticking = false
 			double_jumped = false
 			
 			sprite.play('jump')
