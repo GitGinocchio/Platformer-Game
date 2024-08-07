@@ -9,8 +9,9 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	var current_animation = character.sprite.animation
-	var direction = character.sprite.flip_h
-	
+	var facing_direction = -1 if character.sprite.flip_h else 1
+	#process_material.direction.x = facing_direction
+
 	if current_animation != last_animation:
 		if current_animation == 'idle' and last_animation == 'fall':
 			one_shot = true

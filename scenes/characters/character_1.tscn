@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://b3jceichgrcoh"]
+[gd_scene load_steps=73 format=3 uid="uid://b3jceichgrcoh"]
 
 [ext_resource type="Texture2D" uid="uid://bvhrf2qpaaw26" path="res://assets/Main Characters/Ninja Frog/Hit (32x32).png" id="1_3116g"]
 [ext_resource type="Texture2D" uid="uid://b61cxj0ghjk7k" path="res://assets/Main Characters/Ninja Frog/Double Jump (32x32).png" id="1_d6xmn"]
@@ -460,31 +460,20 @@ animations = [{
 "speed": 20.0
 }]
 
-[sub_resource type="Curve" id="Curve_3aj3q"]
-_data = [Vector2(0, 0.871921), 0.0, 0.0, 0, 0, Vector2(0.549689, 0.391626), -5.5234, -5.5234, 0, 0, Vector2(0.667702, 0), 0.0, 0.0, 0, 0]
-point_count = 3
-
-[sub_resource type="CurveTexture" id="CurveTexture_r0i4m"]
-width = 2048
-curve = SubResource("Curve_3aj3q")
-
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3k0tb"]
 particle_flag_disable_z = true
 particle_flag_damping_as_friction = true
-emission_shape_scale = Vector3(0, 0, 0)
+emission_shape_scale = Vector3(50, 0, 0)
 emission_shape = 1
-emission_sphere_radius = 30.0
-direction = Vector3(-1, 0, 0)
-spread = 20.0
-initial_velocity_min = 20.0
-initial_velocity_max = 50.0
+emission_sphere_radius = 1.0
+direction = Vector3(0, 0, 0)
+initial_velocity_max = 10.0
 gravity = Vector3(0, 0, 0)
-linear_accel_max = 10.0
-scale_min = 0.25
-scale_max = 1.5
-scale_curve = SubResource("CurveTexture_r0i4m")
+scale_min = 0.1
 turbulence_noise_speed_random = 1.1
-collision_mode = 2
+collision_mode = 1
+collision_friction = 1.0
+collision_bounce = 0.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7vexs"]
 radius = 9.0
@@ -500,18 +489,14 @@ unique_name_in_owner = true
 position = Vector2(3.8147e-06, -1.90735e-06)
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_vndoc")
-animation = &"appearing"
+animation = &"idle"
 autoplay = "appearing"
 
 [node name="DustParticles" type="GPUParticles2D" parent="."]
 position = Vector2(7.62939e-06, 40)
-emitting = false
-amount = 30
 process_material = SubResource("ParticleProcessMaterial_3k0tb")
 texture = ExtResource("9_0gcq8")
 lifetime = 2.0
-one_shot = true
-speed_scale = 2.0
 explosiveness = 1.0
 fixed_fps = 0
 interpolate = false

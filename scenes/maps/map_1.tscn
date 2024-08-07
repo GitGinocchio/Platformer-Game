@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://bsivvnhh35cwo"]
+[gd_scene load_steps=12 format=3 uid="uid://bsivvnhh35cwo"]
 
 [ext_resource type="Shader" path="res://shaders/background.gdshader" id="1_bqu02"]
 [ext_resource type="Texture2D" uid="uid://1r5k812oi3ok" path="res://assets/Terrain/Terrain (16x16).png" id="1_eyor1"]
 [ext_resource type="Texture2D" uid="uid://c6o3fx2rj4wly" path="res://assets/Background/Green.png" id="1_wh0im"]
 [ext_resource type="PackedScene" uid="uid://b0rc2vbqc1866" path="res://scenes/traps/spikes.tscn" id="4_lj31t"]
 [ext_resource type="PackedScene" uid="uid://dordy3866ha6t" path="res://scenes/checkpoints/checkpoint.tscn" id="5_i1c15"]
+[ext_resource type="PackedScene" uid="uid://dlwky5gpf67io" path="res://scenes/checkpoints/start.tscn" id="6_a8r6o"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g0fpx"]
 shader = ExtResource("1_bqu02")
@@ -598,3 +599,6 @@ position = Vector2(613, 416)
 [node name="Checkpoint" parent="Checkpoints" instance=ExtResource("5_i1c15")]
 position = Vector2(720, 128)
 scale = Vector2(3, 3)
+
+[node name="Start" parent="Checkpoints" instance=ExtResource("6_a8r6o")]
+position = Vector2(155, 531)
