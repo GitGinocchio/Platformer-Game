@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://df1v4uan032vy" path="res://assets/Main Characters/Ninja Frog/Run (32x32).png" id="3_mya65"]
 [ext_resource type="Texture2D" uid="uid://0wevv14kum7r" path="res://assets/Main Characters/Ninja Frog/Wall Jump (32x32).png" id="7_ca2gd"]
 [ext_resource type="Texture2D" uid="uid://d4ha024dxygwe" path="res://assets/Other/Dust Particle.png" id="9_0gcq8"]
-[ext_resource type="Script" path="res://scenes/characters/DustParticles.gd" id="10_yrkyl"]
+[ext_resource type="Script" path="res://scripts/DustParticles.gd" id="10_yrkyl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0xtt7"]
 atlas = ExtResource("1_d6xmn")
@@ -395,7 +395,6 @@ autoplay = "idle"
 
 [node name="DustParticles" type="GPUParticles2D" parent="."]
 position = Vector2(7.62939e-06, 40)
-scale = Vector2(1, 1)
 emitting = false
 amount = 30
 process_material = SubResource("ParticleProcessMaterial_3k0tb")
