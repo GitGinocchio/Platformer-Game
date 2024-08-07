@@ -29,6 +29,5 @@ func _physics_process(delta: float) -> void:
 	
 	last_animation = current_animation
 
-
 func _on_finished() -> void:
 	pass # Replace with function body.

@@ -504,7 +504,6 @@ animation = &"appearing"
 autoplay = "appearing"
 
 [node name="DustParticles" type="GPUParticles2D" parent="."]
-visible = false
 position = Vector2(7.62939e-06, 40)
 emitting = false
 amount = 30
