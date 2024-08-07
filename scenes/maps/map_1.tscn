@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dordy3866ha6t" path="res://scenes/checkpoints/checkpoint.tscn" id="5_i1c15"]
 [ext_resource type="PackedScene" uid="uid://dlwky5gpf67io" path="res://scenes/checkpoints/start.tscn" id="6_a8r6o"]
 [ext_resource type="PackedScene" uid="uid://d218tnymjh7ds" path="res://scenes/collectables/apple.tscn" id="7_fq4r0"]
+[ext_resource type="PackedScene" uid="uid://bxx3wt5bjhcqu" path="res://scenes/checkpoints/end.tscn" id="7_1llqb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g0fpx"]
 shader = ExtResource("1_bqu02")
@@ -603,7 +604,6 @@ scale = Vector2(3, 3)
 
 [node name="Start" parent="Checkpoints" instance=ExtResource("6_a8r6o")]
 position = Vector2(155, 531)
-
 [node name="Area2D" parent="." instance=ExtResource("7_fq4r0")]
 position = Vector2(304, 528)
 
@@ -642,3 +642,5 @@ position = Vector2(1040, 200)
 
 [node name="Area2D13" parent="." instance=ExtResource("7_fq4r0")]
 position = Vector2(1048, 440)
+[node name="End" parent="Checkpoints" instance=ExtResource("7_1llqb")]
+position = Vector2(1055, 295)
