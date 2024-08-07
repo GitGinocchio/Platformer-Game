@@ -1,16 +1,15 @@
 [gd_scene load_steps=3 format=3 uid="uid://bfpvbyp3x25og"]
 
-[ext_resource type="PackedScene" uid="uid://bsivvnhh35cwo" path="res://scenes/map_1.tscn" id="1_imdv8"]
-[ext_resource type="PackedScene" uid="uid://b3jceichgrcoh" path="res://scenes/character_1.tscn" id="1_yuc6k"]
+[ext_resource type="PackedScene" uid="uid://bsivvnhh35cwo" path="res://scenes/maps/map_1.tscn" id="1_fxjds"]
+[ext_resource type="PackedScene" uid="uid://b3jceichgrcoh" path="res://scenes/characters/character_1.tscn" id="2_e46br"]
 
 [node name="Game" type="Node2D"]
 
-[node name="map" parent="." instance=ExtResource("1_imdv8")]
+[node name="map" parent="." instance=ExtResource("1_fxjds")]
 position = Vector2(-576, -384)
 
-[node name="Character" parent="." instance=ExtResource("1_yuc6k")]
+[node name="Character" parent="." instance=ExtResource("2_e46br")]
 position = Vector2(-448, 208)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(8, -48)
-enabled = false

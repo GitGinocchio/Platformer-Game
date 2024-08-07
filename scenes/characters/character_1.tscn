@@ -1,13 +1,15 @@
-[gd_scene load_steps=54 format=3 uid="uid://b3jceichgrcoh"]
+[gd_scene load_steps=59 format=3 uid="uid://b3jceichgrcoh"]
 
 [ext_resource type="Texture2D" uid="uid://bvhrf2qpaaw26" path="res://assets/Main Characters/Ninja Frog/Hit (32x32).png" id="1_3116g"]
 [ext_resource type="Texture2D" uid="uid://b61cxj0ghjk7k" path="res://assets/Main Characters/Ninja Frog/Double Jump (32x32).png" id="1_d6xmn"]
+[ext_resource type="Script" path="res://scripts/Character.gd" id="1_nxohu"]
 [ext_resource type="Texture2D" uid="uid://dexfkgurs3ha1" path="res://assets/Main Characters/Ninja Frog/Idle (32x32).png" id="1_obeyh"]
-[ext_resource type="Script" path="res://scenes/Character.gd" id="1_pwrem"]
 [ext_resource type="Texture2D" uid="uid://pe65f6bxy4rn" path="res://assets/Main Characters/Ninja Frog/Jump (32x32).png" id="2_qyso7"]
 [ext_resource type="Texture2D" uid="uid://423r2irt8lta" path="res://assets/Main Characters/Ninja Frog/Fall (32x32).png" id="2_yj6la"]
 [ext_resource type="Texture2D" uid="uid://df1v4uan032vy" path="res://assets/Main Characters/Ninja Frog/Run (32x32).png" id="3_mya65"]
 [ext_resource type="Texture2D" uid="uid://0wevv14kum7r" path="res://assets/Main Characters/Ninja Frog/Wall Jump (32x32).png" id="7_ca2gd"]
+[ext_resource type="Texture2D" uid="uid://d4ha024dxygwe" path="res://assets/Other/Dust Particle.png" id="9_0gcq8"]
+[ext_resource type="Script" path="res://scenes/characters/DustParticles.gd" id="10_yrkyl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0xtt7"]
 atlas = ExtResource("1_d6xmn")
@@ -348,26 +350,73 @@ animations = [{
 "speed": 20.0
 }]
 
+[sub_resource type="Curve" id="Curve_3aj3q"]
+_data = [Vector2(0, 0.871921), 0.0, 0.0, 0, 0, Vector2(0.549689, 0.391626), -5.5234, -5.5234, 0, 0, Vector2(0.667702, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_r0i4m"]
+width = 2048
+curve = SubResource("Curve_3aj3q")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3k0tb"]
+particle_flag_disable_z = true
+particle_flag_damping_as_friction = true
+emission_shape_scale = Vector3(0, 0, 0)
+emission_shape = 1
+emission_sphere_radius = 30.0
+direction = Vector3(-1, 0, 0)
+spread = 20.0
+initial_velocity_min = 20.0
+initial_velocity_max = 50.0
+gravity = Vector3(0, 0, 0)
+linear_accel_max = 10.0
+scale_min = 0.25
+scale_max = 1.5
+scale_curve = SubResource("CurveTexture_r0i4m")
+turbulence_noise_speed_random = 1.1
+collision_mode = 2
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7vexs"]
 radius = 9.0
 height = 26.0
 
 [node name="Character" type="CharacterBody2D"]
-script = ExtResource("1_pwrem")
+script = ExtResource("1_nxohu")
+GRAVITY = 1200
+WALL_JUMP_HORIZONTAL_VELOCITY = 50.0
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(3.8147e-06, -1.90735e-06)
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_vndoc")
 animation = &"idle"
 autoplay = "idle"
 
+[node name="DustParticles" type="GPUParticles2D" parent="."]
+position = Vector2(7.62939e-06, 40)
+scale = Vector2(1, 1)
+emitting = false
+amount = 30
+process_material = SubResource("ParticleProcessMaterial_3k0tb")
+texture = ExtResource("9_0gcq8")
+lifetime = 2.0
+one_shot = true
+speed_scale = 2.0
+explosiveness = 1.0
+fixed_fps = 0
+interpolate = false
+local_coords = true
+script = ExtResource("10_yrkyl")
+
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(0, 7.5)
+position = Vector2(-7.62939e-06, 8)
 scale = Vector2(2.5, 2.5)
 shape = SubResource("CapsuleShape2D_7vexs")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+enabled = false
 position_smoothing_speed = 300.0
 
-[connection signal="animation_changed" from="Sprite" to="." method="_on_sprite_animation_changed"]
 [connection signal="animation_finished" from="Sprite" to="." method="_on_sprite_animation_finished"]
+[connection signal="finished" from="DustParticles" to="DustParticles" method="_on_finished"]
