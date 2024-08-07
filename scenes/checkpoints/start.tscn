@@ -146,7 +146,7 @@ size = Vector2(54, 36)
 size = Vector2(34, 8)
 
 [node name="Start" type="Area2D"]
-scale = Vector2(3, 3)
+scale = Vector2(2.5, 2.5)
 script = ExtResource("1_gqg7i")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

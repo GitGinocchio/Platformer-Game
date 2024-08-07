@@ -282,7 +282,7 @@ animations = [{
 size = Vector2(30, 46)
 
 [node name="Checkpoint" type="Area2D"]
-scale = Vector2(4, 4)
+scale = Vector2(2, 2)
 script = ExtResource("1_x2ci8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

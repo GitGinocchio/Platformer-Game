@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cteepua0kwh6b" path="res://assets/Items/Fruits/Collected.png" id="1_1hseb"]
 [ext_resource type="Texture2D" uid="uid://b5s7t62dcvsfc" path="res://assets/Items/Fruits/Apple.png" id="1_g85nr"]
-[ext_resource type="Script" path="res://scenes/collectables/apple.gd" id="1_lwua8"]
+[ext_resource type="Script" path="res://scripts/Apple.gd" id="1_s83h4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cekpe"]
 atlas = ExtResource("1_1hseb")
@@ -182,17 +182,15 @@ animations = [{
 radius = 14.0357
 
 [node name="apple" type="Area2D"]
-script = ExtResource("1_lwua8")
+script = ExtResource("1_s83h4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(16, 16)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_jtggo")
 animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(16, 16)
 shape = SubResource("CircleShape2D_c7xo2")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
