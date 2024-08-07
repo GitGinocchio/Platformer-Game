@@ -460,24 +460,16 @@ animations = [{
 "speed": 20.0
 }]
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3k0tb"]
-particle_flag_disable_z = true
-particle_flag_damping_as_friction = true
-emission_shape_scale = Vector3(50, 0, 0)
-emission_shape = 1
-emission_sphere_radius = 1.0
-direction = Vector3(0, 0, 0)
-initial_velocity_max = 10.0
-gravity = Vector3(0, 0, 0)
-scale_min = 0.1
-turbulence_noise_speed_random = 1.1
-collision_mode = 1
-collision_friction = 1.0
-collision_bounce = 0.0
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7vexs"]
 radius = 9.0
 height = 26.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6ddrq"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(0, 0, 0)
+emission_shape = 1
+emission_sphere_radius = 60.25
+gravity = Vector3(0, 98, 0)
 
 [node name="Character" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_nxohu")
@@ -492,19 +484,8 @@ sprite_frames = SubResource("SpriteFrames_vndoc")
 animation = &"idle"
 autoplay = "appearing"
 
-[node name="DustParticles" type="GPUParticles2D" parent="."]
-position = Vector2(7.62939e-06, 40)
-process_material = SubResource("ParticleProcessMaterial_3k0tb")
-texture = ExtResource("9_0gcq8")
-lifetime = 2.0
-explosiveness = 1.0
-fixed_fps = 0
-interpolate = false
-local_coords = true
-script = ExtResource("10_yrkyl")
-
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(-7.62939e-06, 8)
+position = Vector2(-1.90735e-06, 8)
 scale = Vector2(2.5, 2.5)
 shape = SubResource("CapsuleShape2D_7vexs")
 
@@ -512,5 +493,10 @@ shape = SubResource("CapsuleShape2D_7vexs")
 enabled = false
 position_smoothing_speed = 300.0
 
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(-8, 40)
+process_material = SubResource("ParticleProcessMaterial_6ddrq")
+texture = ExtResource("9_0gcq8")
+script = ExtResource("10_yrkyl")
+
 [connection signal="animation_finished" from="Sprite" to="." method="_on_sprite_animation_finished"]
-[connection signal="finished" from="DustParticles" to="DustParticles" method="_on_finished"]

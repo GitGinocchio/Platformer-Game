@@ -1,7 +1,7 @@
 [gd_scene load_steps=24 format=3 uid="uid://dlwky5gpf67io"]
 
 [ext_resource type="Texture2D" uid="uid://bm3i0v2jxd6r3" path="res://assets/Items/Checkpoints/Start/Start (Idle).png" id="1_a5qs0"]
-[ext_resource type="Script" path="res://scripts/start.gd" id="1_c8i0i"]
+[ext_resource type="Script" path="res://scripts/Start.gd" id="1_gqg7i"]
 [ext_resource type="Texture2D" uid="uid://cenkg5nlfeps3" path="res://assets/Items/Checkpoints/Start/Start (Moving) (64x64).png" id="2_wh7pb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_76g1s"]
@@ -147,7 +147,7 @@ size = Vector2(34, 8)
 
 [node name="Start" type="Area2D"]
 scale = Vector2(3, 3)
-script = ExtResource("1_c8i0i")
+script = ExtResource("1_gqg7i")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_qrpjc")
