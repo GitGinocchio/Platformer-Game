@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bsivvnhh35cwo"]
+[gd_scene load_steps=11 format=3 uid="uid://bsivvnhh35cwo"]
 
 [ext_resource type="Shader" path="res://shaders/background.gdshader" id="1_bqu02"]
 [ext_resource type="Texture2D" uid="uid://1r5k812oi3ok" path="res://assets/Terrain/Terrain (16x16).png" id="1_eyor1"]
 [ext_resource type="Texture2D" uid="uid://c6o3fx2rj4wly" path="res://assets/Background/Green.png" id="1_wh0im"]
+[ext_resource type="PackedScene" uid="uid://b0rc2vbqc1866" path="res://scenes/traps/spikes.tscn" id="4_lj31t"]
+[ext_resource type="PackedScene" uid="uid://dordy3866ha6t" path="res://scenes/checkpoints/checkpoint.tscn" id="5_i1c15"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g0fpx"]
 shader = ExtResource("1_bqu02")
@@ -579,3 +581,20 @@ shape = SubResource("WorldBoundaryShape2D_a8v2l")
 position = Vector2(-0.000732422, -576)
 rotation = 3.14159
 shape = SubResource("WorldBoundaryShape2D_a8v2l")
+
+[node name="Spikes" type="Node2D" parent="."]
+
+[node name="Spike1" parent="Spikes" instance=ExtResource("4_lj31t")]
+position = Vector2(493, 416)
+
+[node name="Spike2" parent="Spikes" instance=ExtResource("4_lj31t")]
+position = Vector2(553, 416)
+
+[node name="Spike3" parent="Spikes" instance=ExtResource("4_lj31t")]
+position = Vector2(613, 416)
+
+[node name="Checkpoints" type="Node2D" parent="."]
+
+[node name="Checkpoint" parent="Checkpoints" instance=ExtResource("5_i1c15")]
+position = Vector2(720, 128)
+scale = Vector2(3, 3)

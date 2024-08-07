@@ -15,13 +15,31 @@ extends CharacterBody2D
 @export var WALL_JUMP_HORIZONTAL_VELOCITY = 200.0
 
 @onready var sprite = $Sprite
+@onready var tree = get_tree()
 
 var double_jumped = false
 var walljump_left = false
 var walljump_right = false
 
+@onready var spawn : Vector2 = sprite.global_position
+@onready var current_spawn : Vector2 = spawn
+
+func die():
+	sprite.play('desappearing')
+
+func set_spawn(position : Vector2):
+	current_spawn = position
+
+func respawn():
+	sprite.play('appearing')
+	global_position = current_spawn
+	
 func _on_sprite_animation_finished() -> void:
-	if sprite.animation == 'jump':
+	if sprite.animation == 'appearing':
+		sprite.play('idle')
+	elif sprite.animation == 'desappearing':
+		respawn()
+	elif sprite.animation == 'jump':
 		velocity.x = 0
 		if walljump_left:
 			walljump_left = false
@@ -37,6 +55,8 @@ func _on_sprite_animation_finished() -> void:
 			walljump_right = false
 		
 func _physics_process(delta: float) -> void:
+	if sprite.animation in ['appearing','desappearing']: return
+	
 	if is_on_wall_only():
 		velocity.x = 0
 		if velocity.y < 0: 
