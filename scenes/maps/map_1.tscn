@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bsivvnhh35cwo"]
+[gd_scene load_steps=13 format=3 uid="uid://bsivvnhh35cwo"]
 
 [ext_resource type="Shader" path="res://shaders/background.gdshader" id="1_bqu02"]
 [ext_resource type="Texture2D" uid="uid://1r5k812oi3ok" path="res://assets/Terrain/Terrain (16x16).png" id="1_eyor1"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b0rc2vbqc1866" path="res://scenes/traps/spikes.tscn" id="4_lj31t"]
 [ext_resource type="PackedScene" uid="uid://dordy3866ha6t" path="res://scenes/checkpoints/checkpoint.tscn" id="5_i1c15"]
 [ext_resource type="PackedScene" uid="uid://dlwky5gpf67io" path="res://scenes/checkpoints/start.tscn" id="6_a8r6o"]
+[ext_resource type="PackedScene" uid="uid://d218tnymjh7ds" path="res://scenes/collectables/apple.tscn" id="7_fq4r0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g0fpx"]
 shader = ExtResource("1_bqu02")
@@ -602,3 +603,42 @@ scale = Vector2(3, 3)
 
 [node name="Start" parent="Checkpoints" instance=ExtResource("6_a8r6o")]
 position = Vector2(155, 531)
+
+[node name="Area2D" parent="." instance=ExtResource("7_fq4r0")]
+position = Vector2(304, 528)
+
+[node name="Area2D2" parent="." instance=ExtResource("7_fq4r0")]
+position = Vector2(368, 488)
+
+[node name="Area2D3" parent="." instance=ExtResource("7_fq4r0")]
+position = Vector2(264, 256)
+
+[node name="Area2D4" parent="." instance=ExtResource("7_fq4r0")]
+position = Vector2(320, 256)
+
+[node name="Area2D5" parent="." instance=ExtResource("7_fq4r0")]
+position = Vector2(376, 256)
+
+[node name="Area2D6" parent="." instance=ExtResource("7_fq4r0")]
+position = Vector2(288, 208)
+
+[node name="Area2D7" parent="." instance=ExtResource("7_fq4r0")]
+position = Vector2(344, 208)
+
+[node name="Area2D8" parent="." instance=ExtResource("7_fq4r0")]
+position = Vector2(312, 160)
+
+[node name="Area2D9" parent="." instance=ExtResource("7_fq4r0")]
+position = Vector2(744, 480)
+
+[node name="Area2D10" parent="." instance=ExtResource("7_fq4r0")]
+position = Vector2(1040, 296)
+
+[node name="Area2D11" parent="." instance=ExtResource("7_fq4r0")]
+position = Vector2(1040, 248)
+
+[node name="Area2D12" parent="." instance=ExtResource("7_fq4r0")]
+position = Vector2(1040, 200)
+
+[node name="Area2D13" parent="." instance=ExtResource("7_fq4r0")]
+position = Vector2(1048, 440)
