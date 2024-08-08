@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bxx3wt5bjhcqu"]
+[gd_scene load_steps=22 format=3 uid="uid://bxx3wt5bjhcqu"]
 
 [ext_resource type="Texture2D" uid="uid://b7d8sep3jywyd" path="res://assets/Items/Checkpoints/End/End (Idle).png" id="1_5sddi"]
 [ext_resource type="Script" path="res://scripts/End.gd" id="1_6tfqc"]
@@ -79,6 +79,57 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iuus2"]
 size = Vector2(46, 44.8125)
 
+[sub_resource type="Gradient" id="Gradient_sl7it"]
+offsets = PackedFloat32Array(0, 0.166667, 0.333333, 0.5, 0.666667, 0.833333, 1)
+colors = PackedColorArray(0.423529, 0.85098, 0.945098, 1, 0.643137, 0.8, 0.258824, 1, 0.968627, 0.92549, 0.541176, 1, 0.945098, 0.545098, 0.447059, 1, 0.972549, 0.611765, 0.752941, 1, 0.967136, 0.640637, 0.693393, 1, 0.94902, 0.737255, 0.494118, 1)
+metadata/_snap_enabled = true
+metadata/_snap_count = 6
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_r33u6"]
+gradient = SubResource("Gradient_sl7it")
+use_hdr = true
+
+[sub_resource type="CurveTexture" id="CurveTexture_5fr6o"]
+
+[sub_resource type="Curve" id="Curve_xwbtn"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.482158), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_3bkff"]
+curve = SubResource("Curve_xwbtn")
+
+[sub_resource type="Curve" id="Curve_pn4yi"]
+_data = [Vector2(0.130243, 1), 0.0, 0.0, 0, 0, Vector2(0.443709, 0.633195), 0.0, 0.0, 0, 0, Vector2(0.587196, 0.902905), 0.0, 0.0, 0, 0, Vector2(0.748344, 0.660166), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_gieer"]
+curve = SubResource("Curve_pn4yi")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_uip6m"]
+lifetime_randomness = 0.5
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(1, 2, 1)
+emission_shape = 1
+emission_sphere_radius = 50.0
+angle_min = -90.0
+angle_max = 90.0
+direction = Vector3(1, 1, 1)
+spread = 180.0
+flatness = 0.5
+initial_velocity_min = 30.0
+initial_velocity_max = 90.0
+gravity = Vector3(0, -98, 0)
+linear_accel_max = 30.0
+damping_min = 50.0
+damping_max = 70.0
+damping_curve = SubResource("CurveTexture_5fr6o")
+scale_min = 2.0
+scale_max = 8.0
+scale_curve = SubResource("CurveTexture_3bkff")
+scale_over_velocity_curve = SubResource("CurveTexture_gieer")
+color_ramp = SubResource("GradientTexture1D_r33u6")
+hue_variation_max = 0.25
+
 [node name="End" type="Area2D"]
 scale = Vector2(2, 2)
 script = ExtResource("1_6tfqc")
@@ -92,5 +143,18 @@ frame = 7
 position = Vector2(0, 9.40625)
 shape = SubResource("RectangleShape2D_iuus2")
 
+[node name="WinParticles" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 150
+process_material = SubResource("ParticleProcessMaterial_uip6m")
+lifetime = 3.0
+one_shot = true
+explosiveness = 1.0
+randomness = 0.1
+draw_order = 0
+trail_enabled = true
+trail_lifetime = 0.1
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="finished" from="WinParticles" to="." method="_on_win_particles_finished"]
