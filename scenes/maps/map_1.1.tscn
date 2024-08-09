@@ -1,11 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://chehveapfrh67"]
+[gd_scene load_steps=11 format=3 uid="uid://chehveapfrh67"]
 
 [ext_resource type="Shader" path="res://shaders/background.gdshader" id="1_t0xl7"]
 [ext_resource type="Texture2D" uid="uid://c6o3fx2rj4wly" path="res://assets/Background/Green.png" id="2_uvvby"]
 [ext_resource type="TileSet" uid="uid://b13fwaevm0kgp" path="res://resources/tilesets/terrain.tres" id="3_d8vl5"]
 [ext_resource type="PackedScene" uid="uid://dordy3866ha6t" path="res://scenes/checkpoints/checkpoint.tscn" id="5_7kyqj"]
 [ext_resource type="PackedScene" uid="uid://dlwky5gpf67io" path="res://scenes/checkpoints/start.tscn" id="6_w104i"]
-[ext_resource type="PackedScene" uid="uid://cosx0avayxlyh" path="res://scenes/traps/saw.tscn" id="7_gqa13"]
 [ext_resource type="PackedScene" uid="uid://bxx3wt5bjhcqu" path="res://scenes/checkpoints/end.tscn" id="7_pcnbh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g0fpx"]
@@ -39,6 +38,3 @@ position = Vector2(150, 547)
 
 [node name="End" parent="Checkpoints" instance=ExtResource("7_pcnbh")]
 position = Vector2(1050, 295)
-
-[node name="Saw" parent="." instance=ExtResource("7_gqa13")]
-position = Vector2(557, 446)

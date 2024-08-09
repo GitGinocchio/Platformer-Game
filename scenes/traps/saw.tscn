@@ -96,19 +96,26 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_1y154"]
 radius = 16.4195
 
-[node name="Saw" type="Node2D"]
+[node name="Saw" type="Path2D"]
 scale = Vector2(2.5, 2.5)
 script = ExtResource("1_62w7m")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Path" type="PathFollow2D" parent="."]
+scale = Vector2(1, 1)
+rotates = false
+loop = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Path"]
 sprite_frames = SubResource("SpriteFrames_0jkr0")
 animation = &"off"
 autoplay = "on"
 frame_progress = 0.7167
 
-[node name="TriggerArea" type="Area2D" parent="."]
+[node name="TriggerArea" type="Area2D" parent="Path"]
+scale = Vector2(1, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path/TriggerArea"]
+scale = Vector2(1, 1)
 shape = SubResource("CircleShape2D_1y154")
 
-[connection signal="body_entered" from="TriggerArea" to="." method="_on_trigger_area_body_entered"]
+[connection signal="body_entered" from="Path/TriggerArea" to="." method="_on_trigger_area_body_entered"]

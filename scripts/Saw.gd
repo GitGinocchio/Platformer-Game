@@ -1,16 +1,17 @@
-extends Node2D
+extends Path2D
 
-@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var path: PathFollow2D = $Path
+@onready var sprite: AnimatedSprite2D = $Path/AnimatedSprite2D
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+@export var speed : float = 1.0
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
+var direction = 1
+	
+func _physics_process(delta: float) -> void:
+	path.progress += direction * speed
+	if path.progress_ratio >= 1 or path.progress_ratio <= 0:
+		direction = -direction
+	
 
 func _on_trigger_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player") and sprite.animation == 'on':
