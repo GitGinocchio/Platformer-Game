@@ -69,7 +69,7 @@ unique_name_in_owner = true
 position = Vector2(3.8147e-06, -1.90735e-06)
 scale = Vector2(2.5, 2.5)
 sprite_frames = ExtResource("2_dlexo")
-animation = &"appearing"
+animation = &"idle"
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 position = Vector2(0, 40)
