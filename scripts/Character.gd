@@ -3,6 +3,17 @@ extends CharacterBody2D
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 
 #ProjectSettings.get_setting("physics/2d/default_gravity")
+
+@export var Sprite_Frames : SpriteFrames = null
+@export var Randomize : bool = false
+
+@onready var characters = [
+	preload('res://resources/characters/mask_dude.tres'),
+	preload('res://resources/characters/ninja_frog.tres'),
+	preload('res://resources/characters/pink_man.tres'),
+	preload('res://resources/characters/virtual_guy.tres')
+]
+
 @export var SPEED = 300.0
 
 @export var JUMP_VELOCITY = -500.0
@@ -27,18 +38,26 @@ var walljump_right = false
 @onready var spawn : Vector2 = sprite.global_position
 @onready var current_spawn : Vector2 = spawn
 
-func die():
+func _ready() -> void:
+	if Sprite_Frames and not Randomize:
+		sprite.sprite_frames = Sprite_Frames
+		sprite.play('idle')
+	elif Randomize:
+		sprite.sprite_frames = characters.pick_random()
+		sprite.play('idle')
+	else:
+		queue_free()
+
+func die() -> void:
 	#sprite.play('hit')
 	sprite.play('desappearing')
 
-func set_spawn(position : Vector2):
+func set_spawn(position : Vector2) -> void:
 	current_spawn = position
 
-func respawn():
+func respawn() -> void:
 	sprite.play('appearing')
 	global_position = current_spawn
-	
-
 	
 func _on_sprite_animation_finished() -> void:
 	if sprite.animation == 'appearing':
