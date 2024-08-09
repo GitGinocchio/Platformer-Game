@@ -525,6 +525,8 @@ scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_vndoc")
 animation = &"idle"
 autoplay = "appearing"
+frame = 8
+frame_progress = 0.950271
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 position = Vector2(0, 40)
