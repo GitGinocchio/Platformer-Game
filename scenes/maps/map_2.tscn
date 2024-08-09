@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b0rc2vbqc1866" path="res://scenes/traps/spikes.tscn" id="4_ul70m"]
 [ext_resource type="PackedScene" uid="uid://dlwky5gpf67io" path="res://scenes/checkpoints/start.tscn" id="5_ci7sg"]
 [ext_resource type="PackedScene" uid="uid://dordy3866ha6t" path="res://scenes/checkpoints/checkpoint.tscn" id="6_fgus1"]
-[ext_resource type="PackedScene" uid="uid://d218tnymjh7ds" path="res://scenes/collectables/apple.tscn" id="7_i480l"]
+[ext_resource type="PackedScene" uid="uid://d218tnymjh7ds" path="res://scenes/collectables/fruit.tscn" id="7_i480l"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_aifu6"]
 shader = ExtResource("1_bqf4k")
