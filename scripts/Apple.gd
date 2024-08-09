@@ -6,8 +6,6 @@ extends Area2D
 @export var Sprite_Frames : SpriteFrames = null
 @export var Randomize : bool = false
 
-const Collectables_Path = "res://resources/collectables/"
-
 @onready var collectables = [
 	preload('res://resources/collectables/apple.tres'),
 	preload('res://resources/collectables/banana.tres'),

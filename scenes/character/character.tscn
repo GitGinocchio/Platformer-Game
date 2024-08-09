@@ -1,0 +1,97 @@
+[gd_scene load_steps=13 format=3 uid="uid://b3jceichgrcoh"]
+
+[ext_resource type="Script" path="res://scripts/Character.gd" id="1_nxohu"]
+[ext_resource type="SpriteFrames" uid="uid://bwcre7vjfwoci" path="res://resources/characters/ninja_frog.tres" id="2_dlexo"]
+[ext_resource type="Texture2D" uid="uid://d4ha024dxygwe" path="res://assets/Other/Dust Particle.png" id="9_0gcq8"]
+[ext_resource type="Script" path="res://scripts/DustParticles.gd" id="10_yrkyl"]
+
+[sub_resource type="Curve" id="Curve_5jln8"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.129528), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_x1iyj"]
+curve = SubResource("Curve_5jln8")
+
+[sub_resource type="Gradient" id="Gradient_o1wwd"]
+colors = PackedColorArray(1, 1, 1, 1, 0.808998, 0.808998, 0.808998, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_lfaq7"]
+gradient = SubResource("Gradient_o1wwd")
+use_hdr = true
+
+[sub_resource type="Curve" id="Curve_n6tj8"]
+max_value = 5.0
+_data = [Vector2(0, 3.32327), 0.0, 0.0, 0, 0, Vector2(1, 1.25412), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_d5xkm"]
+curve = SubResource("Curve_n6tj8")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6ddrq"]
+lifetime_randomness = 1.0
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(10, 0, 1)
+emission_shape = 1
+emission_sphere_radius = 1.0
+angle_max = 90.0
+direction = Vector3(0, -0.1, 0)
+spread = 70.0
+flatness = 0.5
+initial_velocity_min = 10.0
+initial_velocity_max = 25.0
+gravity = Vector3(0, 0.5, 0)
+linear_accel_max = 10.0
+radial_accel_max = 10.0
+tangential_accel_max = 10.0
+scale_min = 0.0
+scale_max = 2.0
+scale_over_velocity_max = 5.0
+scale_over_velocity_curve = SubResource("CurveTexture_d5xkm")
+color_ramp = SubResource("GradientTexture1D_lfaq7")
+alpha_curve = SubResource("CurveTexture_x1iyj")
+turbulence_noise_speed = Vector3(0, -1, 0)
+collision_mode = 1
+collision_friction = 1.0
+collision_bounce = 1.0
+collision_use_scale = true
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7vexs"]
+radius = 9.0
+height = 26.0
+
+[node name="Character" type="CharacterBody2D" groups=["Player"]]
+script = ExtResource("1_nxohu")
+Randomize = true
+GRAVITY = 1200
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(3.8147e-06, -1.90735e-06)
+scale = Vector2(2.5, 2.5)
+sprite_frames = ExtResource("2_dlexo")
+animation = &"appearing"
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(0, 40)
+emitting = false
+amount = 50
+process_material = SubResource("ParticleProcessMaterial_6ddrq")
+texture = ExtResource("9_0gcq8")
+explosiveness = 1.0
+randomness = 1.0
+draw_order = 0
+script = ExtResource("10_yrkyl")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(-1.90735e-06, 8)
+scale = Vector2(2.5, 2.5)
+shape = SubResource("CapsuleShape2D_7vexs")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_speed = 300.0
+
+[node name="Cooldown" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="animation_finished" from="Sprite" to="." method="_on_sprite_animation_finished"]
+[connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]

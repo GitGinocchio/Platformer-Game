@@ -1,21 +1,19 @@
-[gd_scene load_steps=14 format=3 uid="uid://bsivvnhh35cwo"]
+[gd_scene load_steps=12 format=3 uid="uid://chehveapfrh67"]
 
-[ext_resource type="Shader" path="res://shaders/background.gdshader" id="1_bqu02"]
-[ext_resource type="Texture2D" uid="uid://1r5k812oi3ok" path="res://assets/Terrain/Terrain (16x16).png" id="1_eyor1"]
-[ext_resource type="Texture2D" uid="uid://c6o3fx2rj4wly" path="res://assets/Background/Green.png" id="1_wh0im"]
-[ext_resource type="PackedScene" uid="uid://b0rc2vbqc1866" path="res://scenes/traps/spikes.tscn" id="4_lj31t"]
-[ext_resource type="PackedScene" uid="uid://dordy3866ha6t" path="res://scenes/checkpoints/checkpoint.tscn" id="5_i1c15"]
-[ext_resource type="PackedScene" uid="uid://dlwky5gpf67io" path="res://scenes/checkpoints/start.tscn" id="6_a8r6o"]
-[ext_resource type="PackedScene" uid="uid://bxx3wt5bjhcqu" path="res://scenes/checkpoints/end.tscn" id="7_1llqb"]
-[ext_resource type="PackedScene" uid="uid://d218tnymjh7ds" path="res://scenes/collectables/fruit.tscn" id="7_fq4r0"]
+[ext_resource type="Shader" path="res://shaders/background.gdshader" id="1_t0xl7"]
+[ext_resource type="Texture2D" uid="uid://c6o3fx2rj4wly" path="res://assets/Background/Green.png" id="2_uvvby"]
+[ext_resource type="Texture2D" uid="uid://1r5k812oi3ok" path="res://assets/Terrain/Terrain (16x16).png" id="3_noh2v"]
+[ext_resource type="PackedScene" uid="uid://dordy3866ha6t" path="res://scenes/checkpoints/checkpoint.tscn" id="5_7kyqj"]
+[ext_resource type="PackedScene" uid="uid://dlwky5gpf67io" path="res://scenes/checkpoints/start.tscn" id="6_w104i"]
+[ext_resource type="PackedScene" uid="uid://bxx3wt5bjhcqu" path="res://scenes/checkpoints/end.tscn" id="7_pcnbh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g0fpx"]
-shader = ExtResource("1_bqu02")
+shader = ExtResource("1_t0xl7")
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wslov"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sqcec"]
-texture = ExtResource("1_eyor1")
+texture = ExtResource("3_noh2v")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -553,7 +551,7 @@ texture_repeat = 3
 material = SubResource("ShaderMaterial_g0fpx")
 offset_right = 1160.0
 offset_bottom = 672.0
-texture = ExtResource("1_wh0im")
+texture = ExtResource("2_uvvby")
 stretch_mode = 1
 metadata/_edit_use_anchors_ = true
 
@@ -585,65 +583,13 @@ position = Vector2(-0.000732422, -576)
 rotation = 3.14159
 shape = SubResource("WorldBoundaryShape2D_a8v2l")
 
-[node name="Spikes" type="Node2D" parent="."]
-
-[node name="Spike1" parent="Spikes" instance=ExtResource("4_lj31t")]
-position = Vector2(838, 551)
-
-[node name="Spike2" parent="Spikes" instance=ExtResource("4_lj31t")]
-position = Vector2(898, 551)
-
-[node name="Spike3" parent="Spikes" instance=ExtResource("4_lj31t")]
-position = Vector2(958, 551)
-
-[node name="Spike" parent="Spikes" instance=ExtResource("4_lj31t")]
-position = Vector2(568, 416)
-
-[node name="Spike4" parent="Spikes" instance=ExtResource("4_lj31t")]
-position = Vector2(628, 416)
-
-[node name="Spike5" parent="Spikes" instance=ExtResource("4_lj31t")]
-position = Vector2(688, 416)
-
 [node name="Checkpoints" type="Node2D" parent="."]
 
-[node name="Checkpoint" parent="Checkpoints" instance=ExtResource("5_i1c15")]
-position = Vector2(712, 160)
+[node name="Checkpoint" parent="Checkpoints" instance=ExtResource("5_7kyqj")]
+position = Vector2(395, 250)
 
-[node name="Start" parent="Checkpoints" instance=ExtResource("6_a8r6o")]
+[node name="Start" parent="Checkpoints" instance=ExtResource("6_w104i")]
 position = Vector2(150, 547)
 
-[node name="End" parent="Checkpoints" instance=ExtResource("7_1llqb")]
+[node name="End" parent="Checkpoints" instance=ExtResource("7_pcnbh")]
 position = Vector2(1050, 295)
-
-[node name="Fruits" type="Node2D" parent="."]
-
-[node name="fruit" parent="Fruits" instance=ExtResource("7_fq4r0")]
-position = Vector2(304, 528)
-
-[node name="fruit2" parent="Fruits" instance=ExtResource("7_fq4r0")]
-position = Vector2(368, 488)
-
-[node name="fruit3" parent="Fruits" instance=ExtResource("7_fq4r0")]
-position = Vector2(264, 256)
-
-[node name="fruit4" parent="Fruits" instance=ExtResource("7_fq4r0")]
-position = Vector2(320, 256)
-
-[node name="fruit5" parent="Fruits" instance=ExtResource("7_fq4r0")]
-position = Vector2(376, 256)
-
-[node name="fruit6" parent="Fruits" instance=ExtResource("7_fq4r0")]
-position = Vector2(288, 208)
-
-[node name="fruit7" parent="Fruits" instance=ExtResource("7_fq4r0")]
-position = Vector2(344, 208)
-
-[node name="fruit8" parent="Fruits" instance=ExtResource("7_fq4r0")]
-position = Vector2(312, 160)
-
-[node name="fruit9" parent="Fruits" instance=ExtResource("7_fq4r0")]
-position = Vector2(761, 498)
-
-[node name="fruit10" parent="Fruits" instance=ExtResource("7_fq4r0")]
-position = Vector2(1052, 462)
