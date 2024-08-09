@@ -101,7 +101,6 @@ scale = Vector2(2.5, 2.5)
 script = ExtResource("1_62w7m")
 
 [node name="Path" type="PathFollow2D" parent="."]
-scale = Vector2(1, 1)
 rotates = false
 loop = false
 
@@ -112,10 +111,8 @@ autoplay = "on"
 frame_progress = 0.7167
 
 [node name="TriggerArea" type="Area2D" parent="Path"]
-scale = Vector2(1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Path/TriggerArea"]
-scale = Vector2(1, 1)
 shape = SubResource("CircleShape2D_1y154")
 
 [connection signal="body_entered" from="Path/TriggerArea" to="." method="_on_trigger_area_body_entered"]
