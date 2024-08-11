@@ -1,4 +1,11 @@
-[gd_scene format=3 uid="uid://cddbk8rjg3p6g"]
+[gd_scene load_steps=5 format=3 uid="uid://cddbk8rjg3p6g"]
+
+[ext_resource type="Script" path="res://scripts/Menu.gd" id="1_8dh26"]
+[ext_resource type="Shader" path="res://shaders/backgroundmenu.gdshader" id="2_8be70"]
+[ext_resource type="Texture2D" uid="uid://c6ggkyg5y2lj4" path="res://assets/Background/Blue.png" id="3_fyn5u"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tk6kt"]
+shader = ExtResource("2_8be70")
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -7,3 +14,46 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8dh26")
+
+[node name="Background" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_tk6kt")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.8091, 2.52185)
+texture = ExtResource("3_fyn5u")
+stretch_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.650669, 0.99608)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Fruit Rush"
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Play"
+
+[node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Options"
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
