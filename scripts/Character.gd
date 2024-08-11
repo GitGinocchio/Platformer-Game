@@ -31,6 +31,7 @@ extends CharacterBody2D
 @onready var cooldown: Timer = $Cooldown
 @onready var tree = get_tree()
 
+var first_jumped = false
 var double_jumped = false
 var walljump_left = false
 var walljump_right = false
@@ -94,12 +95,18 @@ func _physics_process(delta: float) -> void:
 		
 		if sprite.animation not in ['walljump']:
 			sprite.play('walljump')
+		
+		first_jumped = false
+		double_jumped = false
 	elif is_on_floor():
 		if sprite.animation not in ['run','idle']:
 			sprite.play('idle')
-		double_jumped = false
+
 		walljump_right = false
 		walljump_left = false
+		
+		first_jumped = false
+		double_jumped = false
 	else:
 		velocity.y += GRAVITY * delta
 		if sprite.animation not in ['fall','jump','doublejump']:
@@ -119,6 +126,7 @@ func _physics_process(delta: float) -> void:
 			sprite.flip_h = false
 			walljump_left = false
 			
+			
 		if sprite.animation not in ['run','jump','fall', 'doublejump','walljump']:
 			sprite.play('run')
 	else:
@@ -129,7 +137,7 @@ func _physics_process(delta: float) -> void:
 			sprite.play('idle')
 	
 	if Input.is_action_just_pressed("jump"):
-		if not double_jumped and is_on_wall_only():
+		if not first_jumped and is_on_wall_only():
 			velocity.x = WALL_JUMP_HORIZONTAL_VELOCITY * (1 if sprite.flip_h else -1)
 			velocity.y = JUMP_VELOCITY
 		
@@ -140,11 +148,13 @@ func _physics_process(delta: float) -> void:
 				walljump_right = true
 			
 			sprite.flip_h = not sprite.flip_h
-			double_jumped = false
+			
+			first_jumped = true
 			
 			sprite.play('jump')
 			cooldown.start(MOVEMENT_AGAINST_WALL_COOLDOWN)
-		elif is_on_wall_only():
+		
+		elif not double_jumped and is_on_wall_only():
 			velocity.x = WALL_JUMP_HORIZONTAL_VELOCITY * (1 if sprite.flip_h else -1)
 			velocity.y = JUMP_VELOCITY
 		
@@ -155,16 +165,25 @@ func _physics_process(delta: float) -> void:
 				walljump_right = true
 			
 			sprite.flip_h = not sprite.flip_h
-			double_jumped = false
+			
+			double_jumped = true
 			
 			sprite.play('jump')
 			cooldown.start(MOVEMENT_AGAINST_WALL_COOLDOWN)
-		elif is_on_floor():
+
+		elif not first_jumped and not is_on_floor():
 			sprite.play('jump')
 			velocity.y = JUMP_VELOCITY
-		elif not double_jumped:
+			first_jumped = true
+
+		elif not double_jumped and not is_on_floor():
 			sprite.play('doublejump')
 			velocity.y = DOUBLE_JUMP_VELOCITY
 			double_jumped = true
+		
+		elif is_on_floor():
+			sprite.play('jump')
+			velocity.y = JUMP_VELOCITY
+			first_jumped = true
 		
 	move_and_slide()
