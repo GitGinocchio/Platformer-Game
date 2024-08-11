@@ -7,7 +7,7 @@
 [node name="Game" type="Node2D"]
 
 [node name="Map2" parent="." instance=ExtResource("1_eo0dk")]
-position = Vector2(-560, -376)
+position = Vector2(-250, -14)
 
 [node name="Character" parent="." instance=ExtResource("2_e46br")]
 position = Vector2(-448, 160)
