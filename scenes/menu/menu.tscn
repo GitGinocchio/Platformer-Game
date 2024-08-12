@@ -1,11 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://cddbk8rjg3p6g"]
 
 [ext_resource type="Script" path="res://scripts/Menu.gd" id="1_8dh26"]
-[ext_resource type="Shader" path="res://shaders/backgroundmenu.gdshader" id="2_8be70"]
-[ext_resource type="Texture2D" uid="uid://c6ggkyg5y2lj4" path="res://assets/Background/Blue.png" id="3_fyn5u"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_mxsvx"]
-shader = ExtResource("2_8be70")
+[ext_resource type="PackedScene" uid="uid://bvs1pun80be5c" path="res://scenes/menu/main_menu_scene.tscn" id="2_47vcl"]
+[ext_resource type="PackedScene" uid="uid://b3jceichgrcoh" path="res://scenes/character/character.tscn" id="3_ywd4b"]
+[ext_resource type="SpriteFrames" uid="uid://bwcre7vjfwoci" path="res://resources/characters/ninja_frog.tres" id="4_n43hx"]
 
 [sub_resource type="SystemFont" id="SystemFont_80oy6"]
 font_names = PackedStringArray("Cooper")
@@ -23,13 +21,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8dh26")
 
-[node name="Background" type="TextureRect" parent="."]
-material = SubResource("ShaderMaterial_mxsvx")
-layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 643.0
-texture = ExtResource("3_fyn5u")
-stretch_mode = 1
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(577, 326)
+
+[node name="Main_menu_scene" parent="." instance=ExtResource("2_47vcl")]
+
+[node name="Character" parent="." instance=ExtResource("3_ywd4b")]
+position = Vector2(578, 572)
+Sprite_Frames = ExtResource("4_n43hx")
 
 [node name="Title" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -85,9 +84,10 @@ theme_override_constants/separation = 50
 
 [node name="NewGame" type="Button" parent="Menu_buttons"]
 layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.124513, 0.606591, 0.621937, 1)
 theme_override_fonts/font = SubResource("SystemFont_bi1ix")
-theme_override_font_sizes/font_size = 64
-text = "Start"
+theme_override_font_sizes/font_size = 44
+text = "START"
 
 [node name="HSeparator2" type="HSeparator" parent="Menu_buttons"]
 modulate = Color(1, 1, 1, 0)
@@ -96,9 +96,10 @@ theme_override_constants/separation = 30
 
 [node name="Options" type="Button" parent="Menu_buttons"]
 layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.124513, 0.606591, 0.621937, 1)
 theme_override_fonts/font = SubResource("SystemFont_bi1ix")
-theme_override_font_sizes/font_size = 64
-text = "Options"
+theme_override_font_sizes/font_size = 44
+text = "OPTIONS"
 
 [node name="HSeparator3" type="HSeparator" parent="Menu_buttons"]
 modulate = Color(1, 1, 1, 0)
@@ -107,9 +108,10 @@ theme_override_constants/separation = 30
 
 [node name="Quit" type="Button" parent="Menu_buttons"]
 layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.124513, 0.606591, 0.621937, 1)
 theme_override_fonts/font = SubResource("SystemFont_bi1ix")
-theme_override_font_sizes/font_size = 64
-text = "Quit"
+theme_override_font_sizes/font_size = 44
+text = "QUIT"
 
 [connection signal="pressed" from="Menu_buttons/NewGame" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="Menu_buttons/Options" to="." method="_on_options_pressed"]

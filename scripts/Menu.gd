@@ -11,8 +11,6 @@ extends Control
 	preload("res://assets/Background/Yellow.png")
 ]
 
-func _ready() -> void:
-	background.texture = backgrounds.pick_random()
 
 
 func _on_new_game_pressed():
