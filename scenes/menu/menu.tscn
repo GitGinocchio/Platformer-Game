@@ -1,59 +1,116 @@
-[gd_scene load_steps=5 format=3 uid="uid://cddbk8rjg3p6g"]
+[gd_scene load_steps=7 format=3 uid="uid://cddbk8rjg3p6g"]
 
 [ext_resource type="Script" path="res://scripts/Menu.gd" id="1_8dh26"]
 [ext_resource type="Shader" path="res://shaders/backgroundmenu.gdshader" id="2_8be70"]
 [ext_resource type="Texture2D" uid="uid://c6ggkyg5y2lj4" path="res://assets/Background/Blue.png" id="3_fyn5u"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_tk6kt"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mxsvx"]
 shader = ExtResource("2_8be70")
 
-[node name="Menu" type="Control"]
+[sub_resource type="SystemFont" id="SystemFont_80oy6"]
+font_names = PackedStringArray("Cooper")
+
+[sub_resource type="SystemFont" id="SystemFont_bi1ix"]
+font_names = PackedStringArray("Cooper")
+
+[node name="Main_menu" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_right = 0.378
+anchor_bottom = 0.378
+offset_right = 717.544
+offset_bottom = 405.056
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8dh26")
 
 [node name="Background" type="TextureRect" parent="."]
-material = SubResource("ShaderMaterial_tk6kt")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(2.8091, 2.52185)
+material = SubResource("ShaderMaterial_mxsvx")
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 643.0
 texture = ExtResource("3_fyn5u")
 stretch_mode = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
+[node name="Title" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -46.0
+offset_right = 46.0
 offset_bottom = 40.0
-scale = Vector2(0.650669, 0.99608)
+grow_horizontal = 2
+alignment = 1
+metadata/_edit_use_anchors_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="HSeparator" type="HSeparator" parent="Title"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-theme_override_constants/separation = 40
+theme_override_constants/separation = 65
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="Title"]
 layout_mode = 2
-text = "Fruit Rush"
+size_flags_horizontal = 4
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = SubResource("SystemFont_80oy6")
+theme_override_font_sizes/font_size = 64
+text = "FRUIT RUSH"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Play"
+[node name="Menu_buttons" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -51.5
+offset_right = 35.0
+offset_bottom = 51.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 5
+alignment = 1
+metadata/_edit_use_anchors_ = true
 
-[node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="Menu_buttons"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="NewGame" type="Button" parent="Menu_buttons"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_bi1ix")
+theme_override_font_sizes/font_size = 64
+text = "Start"
+
+[node name="HSeparator2" type="HSeparator" parent="Menu_buttons"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Options" type="Button" parent="Menu_buttons"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_bi1ix")
+theme_override_font_sizes/font_size = 64
 text = "Options"
 
-[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="HSeparator3" type="HSeparator" parent="Menu_buttons"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Quit" type="Button" parent="Menu_buttons"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_bi1ix")
+theme_override_font_sizes/font_size = 64
 text = "Quit"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Menu_buttons/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="Menu_buttons/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Menu_buttons/Quit" to="." method="_on_quit_pressed"]
