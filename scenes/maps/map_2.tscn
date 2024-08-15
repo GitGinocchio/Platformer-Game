@@ -85,3 +85,4 @@ position = Vector2(154, 233)
 position = Vector2(1144, 115.8)
 
 [node name="Saws" type="Node2D" parent="."]
+position = Vector2(0, 2)
