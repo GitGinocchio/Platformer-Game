@@ -14,6 +14,9 @@ extends CharacterBody2D
 	preload('res://resources/characters/virtual_guy.tres')
 ]
 
+@export var ENABLE_DOUBLE_JUMP = false
+@export var ENABLE_WALL_JUMP = false
+
 @export var SPEED = 300.0
 
 @export var JUMP_VELOCITY = -500.0
@@ -80,7 +83,7 @@ func _on_cooldown_timeout() -> void:
 func _physics_process(delta: float) -> void:
 	if sprite.animation in ['appearing','desappearing', 'hit']: return
 	
-	if is_on_wall_only():
+	if is_on_wall_only() and ENABLE_WALL_JUMP:
 		if velocity.y < 0: 
 			velocity.y = 0 #move_toward(velocity.y, 0, WALL_SLIDE_DECELERATION * delta)
 		
@@ -137,7 +140,7 @@ func _physics_process(delta: float) -> void:
 			sprite.play('idle')
 	
 	if Input.is_action_just_pressed("jump"):
-		if not first_jumped and is_on_wall_only():
+		if not first_jumped and is_on_wall_only() and ENABLE_WALL_JUMP:
 			velocity.x = WALL_JUMP_HORIZONTAL_VELOCITY * (1 if sprite.flip_h else -1)
 			velocity.y = JUMP_VELOCITY
 		
@@ -154,7 +157,7 @@ func _physics_process(delta: float) -> void:
 			sprite.play('jump')
 			cooldown.start(MOVEMENT_AGAINST_WALL_COOLDOWN)
 		
-		elif not double_jumped and is_on_wall_only():
+		elif not double_jumped and is_on_wall_only() and ENABLE_WALL_JUMP:
 			velocity.x = WALL_JUMP_HORIZONTAL_VELOCITY * (1 if sprite.flip_h else -1)
 			velocity.y = JUMP_VELOCITY
 		
@@ -170,16 +173,16 @@ func _physics_process(delta: float) -> void:
 			
 			sprite.play('jump')
 			cooldown.start(MOVEMENT_AGAINST_WALL_COOLDOWN)
+
+		elif not double_jumped and not is_on_floor() and ENABLE_DOUBLE_JUMP:
+			sprite.play('doublejump')
+			velocity.y = DOUBLE_JUMP_VELOCITY
+			double_jumped = true
 
 		elif not first_jumped and not is_on_floor():
 			sprite.play('jump')
 			velocity.y = JUMP_VELOCITY
 			first_jumped = true
-
-		elif not double_jumped and not is_on_floor():
-			sprite.play('doublejump')
-			velocity.y = DOUBLE_JUMP_VELOCITY
-			double_jumped = true
 		
 		elif is_on_floor():
 			sprite.play('jump')
