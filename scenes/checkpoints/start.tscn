@@ -147,6 +147,8 @@ size = Vector2(34, 8)
 
 [node name="Start" type="Area2D"]
 scale = Vector2(2.5, 2.5)
+collision_layer = 1024
+collision_mask = 512
 script = ExtResource("1_gqg7i")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
