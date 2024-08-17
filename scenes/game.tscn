@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://bfpvbyp3x25og"]
 
-[ext_resource type="PackedScene" uid="uid://cp8whnb66jlk3" path="res://scenes/maps/map_2.tscn" id="1_eo0dk"]
 [ext_resource type="PackedScene" uid="uid://b3jceichgrcoh" path="res://scenes/character/character.tscn" id="2_e46br"]
 [ext_resource type="SpriteFrames" uid="uid://bwcre7vjfwoci" path="res://resources/characters/ninja_frog.tres" id="2_g37vj"]
+[ext_resource type="PackedScene" uid="uid://wng650ncbmgb" path="res://scenes/maps/map_3.tscn" id="3_usfys"]
 
 [node name="Game" type="Node2D"]
 
@@ -14,8 +14,16 @@ position = Vector2(-68, 218)
 Sprite_Frames = ExtResource("2_g37vj")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+visible = false
 position = Vector2(8, -48)
 enabled = false
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0
 rotation_smoothing_enabled = true
+
+[node name="Map3" parent="." instance=ExtResource("3_usfys")]
+position = Vector2(1, 0)
+
+[node name="Character" parent="." instance=ExtResource("2_e46br")]
+position = Vector2(183, 233)
+Sprite_Frames = ExtResource("2_g37vj")
