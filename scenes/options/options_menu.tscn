@@ -31,9 +31,9 @@ text = "Volume"
 layout_mode = 2
 text = "Back"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Resolution" to="." method="_on_resolution_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Resolution" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Resolution" to="." method="_on_resolution_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Volume" to="." method="_on_volume_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Volume" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]
