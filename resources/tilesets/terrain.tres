@@ -1,7 +1,8 @@
-[gd_resource type="TileSet" load_steps=6 format=3 uid="uid://b13fwaevm0kgp"]
+[gd_resource type="TileSet" load_steps=8 format=3 uid="uid://b13fwaevm0kgp"]
 
 [ext_resource type="Texture2D" uid="uid://1r5k812oi3ok" path="res://assets/Terrain/Terrain (16x16).png" id="1_lb1ow"]
 [ext_resource type="Texture2D" uid="uid://crpwwx788i4v3" path="res://assets/Terrain/Terrain2 (16x16).png" id="2_y352u"]
+[ext_resource type="Texture2D" uid="uid://cs8486wr1waye" path="res://assets/Items/Front Palm Trees/Front Palm Bottom and Grass (32x32).png" id="3_x7fop"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wslov"]
 
@@ -409,9 +410,25 @@ texture = ExtResource("2_y352u")
 16:4/0 = 0
 16:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 4.91077, 7.01539, 7.08554, 4.84062, 8, -8, 8)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_byp0s"]
+texture = ExtResource("3_x7fop")
+0:0/size_in_atlas = Vector2i(2, 4)
+0:0/0 = 0
+2:0/size_in_atlas = Vector2i(4, 2)
+2:0/0 = 0
+2:2/size_in_atlas = Vector2i(4, 2)
+2:2/0 = 0
+0:4/size_in_atlas = Vector2i(2, 2)
+0:4/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+
 [resource]
 physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 512
 physics_layer_0/physics_material = SubResource("PhysicsMaterial_wslov")
 sources/0 = SubResource("TileSetAtlasSource_sqcec")
 sources/1 = SubResource("TileSetAtlasSource_6j1i3")
+sources/2 = SubResource("TileSetAtlasSource_byp0s")
