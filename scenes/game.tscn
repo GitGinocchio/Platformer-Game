@@ -6,13 +6,6 @@
 
 [node name="Game" type="Node2D"]
 
-[node name="Map2" parent="." instance=ExtResource("1_eo0dk")]
-position = Vector2(-250, -14)
-
-[node name="Character" parent="." instance=ExtResource("2_e46br")]
-position = Vector2(-68, 218)
-Sprite_Frames = ExtResource("2_g37vj")
-
 [node name="Camera2D" type="Camera2D" parent="."]
 visible = false
 position = Vector2(8, -48)

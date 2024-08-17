@@ -60,6 +60,8 @@ radius = 9.0
 height = 26.0
 
 [node name="Character" type="CharacterBody2D" groups=["Player"]]
+z_index = 10
+collision_layer = 512
 script = ExtResource("1_nxohu")
 Randomize = true
 GRAVITY = 1200
