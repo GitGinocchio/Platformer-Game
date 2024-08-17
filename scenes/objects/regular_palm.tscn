@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://bxi880kxku6qw"]
+
+[ext_resource type="Texture2D" uid="uid://cikh3em8x62ec" path="res://assets/Items/Back Palm Trees/Back Palm Tree Regular 01.png" id="1_j7krr"]
+[ext_resource type="Texture2D" uid="uid://ci2m14k5k6nwp" path="res://assets/Items/Back Palm Trees/Back Palm Tree Regular 02.png" id="2_yem5j"]
+[ext_resource type="Texture2D" uid="uid://bxg5vl0c8s0t4" path="res://assets/Items/Back Palm Trees/Back Palm Tree Regular 03.png" id="3_t5o2q"]
+[ext_resource type="Texture2D" uid="uid://b1fcxahumbd3h" path="res://assets/Items/Back Palm Trees/Back Palm Tree Regular 04.png" id="4_xsrhe"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_twk4l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_j7krr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_yem5j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_t5o2q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xsrhe")
+}],
+"loop": true,
+"name": &"main",
+"speed": 10.0
+}]
+
+[node name="Regular Palm" type="Node2D"]
+scale = Vector2(2.5, 2.5)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_twk4l")
+animation = &"main"
+autoplay = "main"

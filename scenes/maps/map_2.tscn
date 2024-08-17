@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=4 uid="uid://cp8whnb66jlk3"]
+[gd_scene load_steps=10 format=4 uid="uid://cp8whnb66jlk3"]
 
 [ext_resource type="Shader" path="res://shaders/backgroundmenu.gdshader" id="1_307a7"]
 [ext_resource type="Texture2D" uid="uid://c6ggkyg5y2lj4" path="res://assets/Background/Blue.png" id="2_0e7wr"]
 [ext_resource type="TileSet" uid="uid://b13fwaevm0kgp" path="res://resources/tilesets/terrain.tres" id="3_7nckg"]
+[ext_resource type="PackedScene" uid="uid://bxi880kxku6qw" path="res://scenes/objects/regular_palm.tscn" id="3_61oiw"]
 [ext_resource type="PackedScene" uid="uid://dlwky5gpf67io" path="res://scenes/checkpoints/start.tscn" id="5_ci7sg"]
 [ext_resource type="PackedScene" uid="uid://dordy3866ha6t" path="res://scenes/checkpoints/checkpoint.tscn" id="6_fgus1"]
 
@@ -67,6 +68,12 @@ follow_viewport_scale = 1000.0
 [node name="Sprite2D" type="Sprite2D" parent="Backgrounds/InfiniteBackground"]
 position = Vector2(0.66042, -0.26079)
 texture = SubResource("GradientTexture2D_0na7y")
+
+[node name="Regular Palm" parent="." instance=ExtResource("3_61oiw")]
+position = Vector2(704, 240)
+
+[node name="Regular Palm2" parent="." instance=ExtResource("3_61oiw")]
+position = Vector2(384, 336)
 
 [node name="Layers" type="Node2D" parent="."]
 

@@ -10,7 +10,7 @@
 position = Vector2(-250, -14)
 
 [node name="Character" parent="." instance=ExtResource("2_e46br")]
-position = Vector2(-448, 160)
+position = Vector2(-68, 218)
 Sprite_Frames = ExtResource("2_g37vj")
 
 [node name="Camera2D" type="Camera2D" parent="."]
