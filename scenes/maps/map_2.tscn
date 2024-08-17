@@ -9,11 +9,11 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_aifu6"]
 shader = ExtResource("1_307a7")
 
-[sub_resource type="Gradient" id="Gradient_35acq"]
+[sub_resource type="Gradient" id="Gradient_rt82r"]
 colors = PackedColorArray(0.129412, 0.121569, 0.188235, 1, 0.129412, 0.121569, 0.188235, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_0na7y"]
-gradient = SubResource("Gradient_35acq")
+gradient = SubResource("Gradient_rt82r")
 width = 1000
 height = 1000
 use_hdr = true
