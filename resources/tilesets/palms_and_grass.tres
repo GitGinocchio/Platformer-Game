@@ -1,0 +1,21 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://be73j6i5o565r"]
+
+[ext_resource type="Texture2D" uid="uid://cs8486wr1waye" path="res://assets/Items/Front Palm Trees/Front Palm Bottom and Grass (32x32).png" id="1_ab3do"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uq77j"]
+texture = ExtResource("1_ab3do")
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+0:0/size_in_atlas = Vector2i(2, 4)
+0:0/0 = 0
+2:0/size_in_atlas = Vector2i(4, 2)
+2:0/0 = 0
+2:2/size_in_atlas = Vector2i(4, 2)
+2:2/0 = 0
+0:4/size_in_atlas = Vector2i(2, 2)
+0:4/0 = 0
+
+[resource]
+sources/0 = SubResource("TileSetAtlasSource_uq77j")

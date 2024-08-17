@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://ciq5r6tkx7oxx"]
+
+[ext_resource type="Texture2D" uid="uid://ei78o3qagudk" path="res://assets/Items/Front Palm Trees/Front Palm Tree Top 01.png" id="1_o0yg1"]
+[ext_resource type="Texture2D" uid="uid://b1uasjf3g1t13" path="res://assets/Items/Front Palm Trees/Front Palm Tree Top 02.png" id="2_mi8c5"]
+[ext_resource type="Texture2D" uid="uid://d1vurknu43bcn" path="res://assets/Items/Front Palm Trees/Front Palm Tree Top 03.png" id="3_36db3"]
+[ext_resource type="Texture2D" uid="uid://c1mfryex8jixu" path="res://assets/Items/Front Palm Trees/Front Palm Tree Top 04.png" id="4_rhqnx"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bfdig"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_o0yg1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mi8c5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_36db3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rhqnx")
+}],
+"loop": true,
+"name": &"main",
+"speed": 5.0
+}]
+
+[node name="Front Palm" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_bfdig")
+animation = &"main"
+autoplay = "main"
+frame_progress = 0.825375
