@@ -17,5 +17,5 @@ rotation_smoothing_enabled = true
 [node name="Map3" parent="." instance=ExtResource("3_dllk3")]
 
 [node name="Character" parent="." instance=ExtResource("2_e46br")]
-position = Vector2(-68, 218)
+position = Vector2(182, 233)
 Sprite_Frames = ExtResource("2_g37vj")

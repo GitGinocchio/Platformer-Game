@@ -1,15 +1,13 @@
-[gd_scene load_steps=10 format=4 uid="uid://wng650ncbmgb"]
+[gd_scene load_steps=12 format=4 uid="uid://wng650ncbmgb"]
 
 [ext_resource type="TileSet" uid="uid://b13fwaevm0kgp" path="res://resources/tilesets/terrain.tres" id="1_0jcac"]
 [ext_resource type="Shader" path="res://shaders/backgroundmenu.gdshader" id="1_ss1kl"]
 [ext_resource type="PackedScene" uid="uid://dlwky5gpf67io" path="res://scenes/checkpoints/start.tscn" id="2_ecrbe"]
 [ext_resource type="Texture2D" uid="uid://c6ggkyg5y2lj4" path="res://assets/Background/Blue.png" id="2_qyma4"]
 [ext_resource type="PackedScene" uid="uid://dordy3866ha6t" path="res://scenes/checkpoints/checkpoint.tscn" id="2_yyyu6"]
-
+[ext_resource type="TileSet" uid="uid://cbacrf2yeh612" path="res://resources/tilesets/terrain_no_collisions.tres" id="3_w4sk6"]
 [ext_resource type="PackedScene" uid="uid://bxi880kxku6qw" path="res://scenes/objects/back_regular_palm.tscn" id="6_5bfmb"]
 [ext_resource type="PackedScene" uid="uid://bypkvxju82qmc" path="res://scenes/objects/back_left_palm.tscn" id="7_bqtuy"]
-
-[ext_resource type="TileSet" uid="uid://cbacrf2yeh612" path="res://resources/tilesets/terrain_no_collisions.tres" id="3_w4sk6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_aifu6"]
 shader = ExtResource("1_ss1kl")
