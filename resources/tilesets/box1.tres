@@ -1,0 +1,17 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://cdvj6ghofr4qh"]
+
+[ext_resource type="Texture2D" uid="uid://duscrq8evhtfv" path="res://assets/Items/Boxes/Box3/Break.png" id="1_htkak"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_swbvq"]
+texture = ExtResource("1_htkak")
+texture_region_size = Vector2i(28, 24)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+3:0/0 = 0
+
+[resource]
+sources/1 = SubResource("TileSetAtlasSource_swbvq")
