@@ -13,6 +13,7 @@ config_version=5
 config/name="Platformer Game"
 run/main_scene="res://scenes/menu/menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
+boot_splash/bg_color=Color(0.129412, 0.121569, 0.188235, 1)
 config/icon="res://icon.svg"
 
 [audio]
@@ -56,3 +57,4 @@ right={
 
 textures/canvas_textures/default_texture_filter=0
 textures/vram_compression/import_etc2_astc=true
+environment/defaults/default_clear_color=Color(0.129412, 0.121569, 0.188235, 1)
