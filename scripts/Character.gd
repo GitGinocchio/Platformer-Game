@@ -47,10 +47,10 @@ var walljump_right = false
 func _ready() -> void:
 	if Sprite_Frames and not Randomize:
 		sprite.sprite_frames = Sprite_Frames
-		sprite.play('idle')
+		sprite.play('appearing')
 	elif Randomize:
 		sprite.sprite_frames = characters.pick_random()
-		sprite.play('idle')
+		sprite.play('appearing')
 	else:
 		queue_free()
 
