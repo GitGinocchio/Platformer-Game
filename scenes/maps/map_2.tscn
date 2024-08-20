@@ -3,7 +3,7 @@
 [ext_resource type="Shader" path="res://shaders/backgroundmenu.gdshader" id="1_307a7"]
 [ext_resource type="Texture2D" uid="uid://c6ggkyg5y2lj4" path="res://assets/Background/Blue.png" id="2_0e7wr"]
 [ext_resource type="TileSet" uid="uid://b13fwaevm0kgp" path="res://resources/tilesets/terrain.tres" id="3_7nckg"]
-[ext_resource type="PackedScene" uid="uid://bxi880kxku6qw" path="res://scenes/objects/back_regular_palm.tscn" id="3_61oiw"]
+[ext_resource type="PackedScene" uid="uid://bxi880kxku6qw" path="res://scenes/objects/palms/back_regular_palm.tscn" id="3_61oiw"]
 [ext_resource type="PackedScene" uid="uid://dlwky5gpf67io" path="res://scenes/checkpoints/start.tscn" id="5_ci7sg"]
 [ext_resource type="PackedScene" uid="uid://dordy3866ha6t" path="res://scenes/checkpoints/checkpoint.tscn" id="6_fgus1"]
 

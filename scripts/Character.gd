@@ -30,6 +30,8 @@ extends CharacterBody2D
 @export var WALL_JUMP_STICKNESS = 100.0
 @export var MOVEMENT_AGAINST_WALL_COOLDOWN = 0.5
 
+@export var RIGID_BODY_PUSH_FORCE = 70.0
+
 @onready var sprite = $Sprite
 @onready var cooldown: Timer = $Cooldown
 @onready var tree = get_tree()
@@ -190,3 +192,9 @@ func _physics_process(delta: float) -> void:
 			first_jumped = true
 		
 	move_and_slide()
+	
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		var collider = collision.get_collider()
+		if collider is RigidBody2D:
+			collider.apply_central_impulse(-collision.get_normal() * RIGID_BODY_PUSH_FORCE)

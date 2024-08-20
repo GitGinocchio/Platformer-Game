@@ -1,0 +1,164 @@
+[gd_scene load_steps=14 format=3 uid="uid://cnveslv7tg2h7"]
+
+[ext_resource type="Script" path="res://scripts/BrokenBox.gd" id="1_4tfyq"]
+[ext_resource type="Texture2D" uid="uid://cxnknduu0gju5" path="res://assets/Items/Boxes/Box1/Break.png" id="2_2wt35"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wlgl"]
+atlas = ExtResource("2_2wt35")
+region = Rect2(0, 0, 28, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ijvvf"]
+size = Vector2(8.8, 7.875)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fa8yo"]
+load_path = "res://.godot/imported/Break.png-eb80803d07621743c28686148e91bdd1.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqmxi"]
+atlas = SubResource("CompressedTexture2D_fa8yo")
+region = Rect2(28, 0, 28, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vqccn"]
+size = Vector2(11.2, 7.875)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2rh7g"]
+atlas = SubResource("CompressedTexture2D_fa8yo")
+region = Rect2(56, 0, 28, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fkd63"]
+size = Vector2(12, 8.8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jlyf6"]
+atlas = SubResource("CompressedTexture2D_fa8yo")
+region = Rect2(84, 0, 28, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x7mxn"]
+size = Vector2(8, 8.8)
+
+[sub_resource type="Animation" id="Animation_ahr3x"]
+resource_name = "explosion"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TopLeftPiece")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [Vector2(10000, 10000)],
+"method": &"apply_central_force"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TopRightPiece")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [Vector2(10000, 10000)],
+"method": &"apply_central_force"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DownLeftPiece")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [Vector2(10000, 10000)],
+"method": &"apply_central_force"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DownRightPiece")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [Vector2(10000, 10000)],
+"method": &"apply_central_force"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fqfde"]
+_data = {
+"explosion": SubResource("Animation_ahr3x")
+}
+
+[node name="BrokenBox" type="Node2D"]
+script = ExtResource("1_4tfyq")
+
+[node name="TopLeftPiece" type="RigidBody2D" parent="."]
+position = Vector2(-12, -8)
+collision_layer = 1024
+collision_mask = 1025
+
+[node name="Sprite2D" type="Sprite2D" parent="TopLeftPiece"]
+scale = Vector2(2.5, 2.5)
+texture = SubResource("AtlasTexture_3wlgl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopLeftPiece"]
+position = Vector2(1, -2.15625)
+scale = Vector2(2.5, 2.5)
+shape = SubResource("RectangleShape2D_ijvvf")
+
+[node name="TopRightPiece" type="RigidBody2D" parent="."]
+position = Vector2(13, -8)
+collision_layer = 1024
+collision_mask = 1025
+
+[node name="Sprite2D" type="Sprite2D" parent="TopRightPiece"]
+scale = Vector2(2.5, 2.5)
+texture = SubResource("AtlasTexture_oqmxi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopRightPiece"]
+position = Vector2(1, -2.15625)
+scale = Vector2(2.5, 2.5)
+shape = SubResource("RectangleShape2D_vqccn")
+
+[node name="DownLeftPiece" type="RigidBody2D" parent="."]
+position = Vector2(-9, 12)
+collision_layer = 1024
+collision_mask = 1025
+
+[node name="Sprite2D" type="Sprite2D" parent="DownLeftPiece"]
+scale = Vector2(2.5, 2.5)
+texture = SubResource("AtlasTexture_2rh7g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DownLeftPiece"]
+position = Vector2(2, -1)
+scale = Vector2(2.5, 2.5)
+shape = SubResource("RectangleShape2D_fkd63")
+
+[node name="DownRightPiece" type="RigidBody2D" parent="."]
+position = Vector2(18, 12)
+collision_layer = 1024
+collision_mask = 1025
+
+[node name="Sprite2D" type="Sprite2D" parent="DownRightPiece"]
+scale = Vector2(2.5, 2.5)
+texture = SubResource("AtlasTexture_jlyf6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DownRightPiece"]
+position = Vector2(0, -1)
+scale = Vector2(2.5, 2.5)
+shape = SubResource("RectangleShape2D_x7mxn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_fqfde")
+}
+autoplay = "explosion"

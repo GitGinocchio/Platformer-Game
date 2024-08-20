@@ -62,6 +62,7 @@ height = 26.0
 [node name="Character" type="CharacterBody2D" groups=["Player"]]
 z_index = 10
 collision_layer = 512
+collision_mask = 1537
 script = ExtResource("1_nxohu")
 Randomize = true
 GRAVITY = 1200
