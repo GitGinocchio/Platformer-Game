@@ -4,15 +4,18 @@
 [ext_resource type="SpriteFrames" uid="uid://51kb4a1ab35q" path="res://resources/collectables/apple.tres" id="2_7slq3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c7xo2"]
-radius = 20.0
+radius = 8.0
 
-[node name="apple" type="Area2D"]
+[node name="Fruit" type="Area2D"]
+z_index = 11
+scale = Vector2(2.5, 2.5)
+collision_layer = 2048
+collision_mask = 512
 script = ExtResource("1_uvgcn")
 Sprite_Frames = ExtResource("2_7slq3")
 Randomize = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(2, 2)
 sprite_frames = ExtResource("2_7slq3")
 animation = &"idle"
 autoplay = "idle"

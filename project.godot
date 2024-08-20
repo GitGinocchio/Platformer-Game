@@ -51,7 +51,9 @@ right={
 
 2d_physics/layer_1="Environment"
 2d_physics/layer_10="Player"
-2d_physics/layer_11="Props"
+2d_physics/layer_11="Checkpoints"
+2d_physics/layer_12="Collectables"
+2d_physics/layer_13="Props"
 
 [rendering]
 

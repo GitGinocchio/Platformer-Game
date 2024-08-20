@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://dordy3866ha6t"]
+[gd_scene load_steps=52 format=3 uid="uid://dordy3866ha6t"]
 
 [ext_resource type="Script" path="res://scripts/Checkpoint.gd" id="1_x2ci8"]
 [ext_resource type="Texture2D" uid="uid://dyh5uxi7g8ww1" path="res://assets/Items/Checkpoints/Checkpoint/Checkpoint (Flag Idle)(64x64).png" id="1_x6dv3"]
@@ -281,6 +281,63 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mf6vp"]
 size = Vector2(30, 46)
 
+[sub_resource type="Gradient" id="Gradient_5n0vm"]
+offsets = PackedFloat32Array(0, 0.166667, 0.333333, 0.5, 0.666667, 0.833333, 1)
+colors = PackedColorArray(0.423529, 0.85098, 0.945098, 1, 0.643137, 0.8, 0.258824, 1, 0.968627, 0.92549, 0.541176, 1, 0.945098, 0.545098, 0.447059, 1, 0.972549, 0.611765, 0.752941, 1, 0.967136, 0.640637, 0.693393, 1, 0.94902, 0.737255, 0.494118, 1)
+metadata/_snap_enabled = true
+metadata/_snap_count = 6
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_r33u6"]
+gradient = SubResource("Gradient_5n0vm")
+use_hdr = true
+
+[sub_resource type="Curve" id="Curve_dn63s"]
+max_value = 100.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_5fr6o"]
+curve = SubResource("Curve_dn63s")
+
+[sub_resource type="Curve" id="Curve_5kc5b"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.482158), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_3bkff"]
+curve = SubResource("Curve_5kc5b")
+
+[sub_resource type="Curve" id="Curve_ks8am"]
+_data = [Vector2(0.130243, 1), 0.0, 0.0, 0, 0, Vector2(0.443709, 0.633195), 0.0, 0.0, 0, 0, Vector2(0.587196, 0.902905), 0.0, 0.0, 0, 0, Vector2(0.748344, 0.660166), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_gieer"]
+curve = SubResource("Curve_ks8am")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_cp17n"]
+lifetime_randomness = 0.5
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(1, 2, 1)
+emission_shape = 1
+emission_sphere_radius = 50.0
+angle_min = -90.0
+angle_max = 90.0
+direction = Vector3(1, 1, 1)
+spread = 180.0
+flatness = 0.5
+initial_velocity_min = 30.0
+initial_velocity_max = 90.0
+gravity = Vector3(0, -98, 0)
+linear_accel_max = 30.0
+damping_min = 50.0
+damping_max = 70.0
+damping_curve = SubResource("CurveTexture_5fr6o")
+scale_min = 2.0
+scale_max = 8.0
+scale_curve = SubResource("CurveTexture_3bkff")
+scale_over_velocity_curve = SubResource("CurveTexture_gieer")
+color_ramp = SubResource("GradientTexture1D_r33u6")
+hue_variation_max = 0.25
+
 [node name="Checkpoint" type="Area2D"]
 scale = Vector2(2, 2)
 collision_layer = 1024
@@ -288,6 +345,7 @@ collision_mask = 512
 script = ExtResource("1_x2ci8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
 sprite_frames = SubResource("SpriteFrames_f7ujy")
 animation = &"flagIdle"
 autoplay = "noFlag"
@@ -299,5 +357,19 @@ shape = SubResource("RectangleShape2D_mf6vp")
 [node name="CheckpointPosition" type="Marker2D" parent="."]
 position = Vector2(2, 9)
 
+[node name="CheckPointParticles" type="GPUParticles2D" parent="."]
+z_index = 9
+emitting = false
+amount = 150
+process_material = SubResource("ParticleProcessMaterial_cp17n")
+lifetime = 3.0
+one_shot = true
+explosiveness = 1.0
+randomness = 0.1
+draw_order = 0
+trail_enabled = true
+trail_lifetime = 0.1
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="finished" from="CheckPointParticles" to="." method="_on_check_point_particles_finished"]

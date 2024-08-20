@@ -178,10 +178,9 @@ _data = {
 
 [node name="Box" type="RigidBody2D"]
 z_index = 9
-collision_layer = 1024
-collision_mask = 1537
+collision_layer = 4096
+collision_mask = 4609
 script = ExtResource("1_tgp0s")
-BOX_TYPE = "2"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2.5, 2.5)

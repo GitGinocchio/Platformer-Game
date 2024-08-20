@@ -103,8 +103,8 @@ script = ExtResource("1_4tfyq")
 
 [node name="TopLeftPiece" type="RigidBody2D" parent="."]
 position = Vector2(-12, -8)
-collision_layer = 1024
-collision_mask = 1025
+collision_layer = 4096
+collision_mask = 4097
 
 [node name="Sprite2D" type="Sprite2D" parent="TopLeftPiece"]
 scale = Vector2(2.5, 2.5)
@@ -117,8 +117,8 @@ shape = SubResource("RectangleShape2D_ijvvf")
 
 [node name="TopRightPiece" type="RigidBody2D" parent="."]
 position = Vector2(13, -8)
-collision_layer = 1024
-collision_mask = 1025
+collision_layer = 4096
+collision_mask = 4097
 
 [node name="Sprite2D" type="Sprite2D" parent="TopRightPiece"]
 scale = Vector2(2.5, 2.5)
@@ -131,8 +131,8 @@ shape = SubResource("RectangleShape2D_vqccn")
 
 [node name="DownLeftPiece" type="RigidBody2D" parent="."]
 position = Vector2(-9, 12)
-collision_layer = 1024
-collision_mask = 1025
+collision_layer = 4096
+collision_mask = 4097
 
 [node name="Sprite2D" type="Sprite2D" parent="DownLeftPiece"]
 scale = Vector2(2.5, 2.5)
@@ -145,8 +145,8 @@ shape = SubResource("RectangleShape2D_fkd63")
 
 [node name="DownRightPiece" type="RigidBody2D" parent="."]
 position = Vector2(18, 12)
-collision_layer = 1024
-collision_mask = 1025
+collision_layer = 4096
+collision_mask = 4097
 
 [node name="Sprite2D" type="Sprite2D" parent="DownRightPiece"]
 scale = Vector2(2.5, 2.5)

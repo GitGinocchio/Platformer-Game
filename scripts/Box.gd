@@ -31,6 +31,8 @@ func _ready() -> void:
 func _on_sprite_animation_finished() -> void:
 	if sprite.animation == "hit" + BOX_TYPE and current_hit >= MAX_HIT:
 		animation.play("explosion")
+	else:
+		sprite.play("idle" + BOX_TYPE)
 
 func _on_trigger_area_body_entered(body: Node2D) -> void:
 	if body.name == "Character" and STATIC:

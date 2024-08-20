@@ -85,7 +85,7 @@ colors = PackedColorArray(0.423529, 0.85098, 0.945098, 1, 0.643137, 0.8, 0.25882
 metadata/_snap_enabled = true
 metadata/_snap_count = 6
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_r33u6"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5j6ij"]
 gradient = SubResource("Gradient_sl7it")
 use_hdr = true
 
@@ -94,21 +94,21 @@ max_value = 100.0
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="CurveTexture" id="CurveTexture_5fr6o"]
+[sub_resource type="CurveTexture" id="CurveTexture_ogiqd"]
 curve = SubResource("Curve_53j7m")
 
 [sub_resource type="Curve" id="Curve_xwbtn"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.482158), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="CurveTexture" id="CurveTexture_3bkff"]
+[sub_resource type="CurveTexture" id="CurveTexture_mfdxi"]
 curve = SubResource("Curve_xwbtn")
 
 [sub_resource type="Curve" id="Curve_pn4yi"]
 _data = [Vector2(0.130243, 1), 0.0, 0.0, 0, 0, Vector2(0.443709, 0.633195), 0.0, 0.0, 0, 0, Vector2(0.587196, 0.902905), 0.0, 0.0, 0, 0, Vector2(0.748344, 0.660166), 0.0, 0.0, 0, 0]
 point_count = 4
 
-[sub_resource type="CurveTexture" id="CurveTexture_gieer"]
+[sub_resource type="CurveTexture" id="CurveTexture_odyqt"]
 curve = SubResource("Curve_pn4yi")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_uip6m"]
@@ -128,16 +128,18 @@ gravity = Vector3(0, -98, 0)
 linear_accel_max = 30.0
 damping_min = 50.0
 damping_max = 70.0
-damping_curve = SubResource("CurveTexture_5fr6o")
+damping_curve = SubResource("CurveTexture_ogiqd")
 scale_min = 2.0
 scale_max = 8.0
-scale_curve = SubResource("CurveTexture_3bkff")
-scale_over_velocity_curve = SubResource("CurveTexture_gieer")
-color_ramp = SubResource("GradientTexture1D_r33u6")
+scale_curve = SubResource("CurveTexture_mfdxi")
+scale_over_velocity_curve = SubResource("CurveTexture_odyqt")
+color_ramp = SubResource("GradientTexture1D_5j6ij")
 hue_variation_max = 0.25
 
 [node name="End" type="Area2D"]
 scale = Vector2(2, 2)
+collision_layer = 1024
+collision_mask = 512
 script = ExtResource("1_6tfqc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -150,6 +152,7 @@ position = Vector2(0, 9.40625)
 shape = SubResource("RectangleShape2D_iuus2")
 
 [node name="WinParticles" type="GPUParticles2D" parent="."]
+z_index = 9
 emitting = false
 amount = 150
 process_material = SubResource("ParticleProcessMaterial_uip6m")
