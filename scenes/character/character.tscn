@@ -62,7 +62,7 @@ height = 26.0
 [node name="Character" type="CharacterBody2D" groups=["Player"]]
 z_index = 10
 collision_layer = 512
-collision_mask = 1537
+collision_mask = 15873
 script = ExtResource("1_nxohu")
 Randomize = true
 GRAVITY = 1200
@@ -72,7 +72,7 @@ unique_name_in_owner = true
 position = Vector2(3.8147e-06, -1.90735e-06)
 scale = Vector2(2.5, 2.5)
 sprite_frames = ExtResource("2_dlexo")
-animation = &"appearing"
+animation = &"idle"
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 position = Vector2(0, 40)
