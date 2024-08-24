@@ -1,0 +1,126 @@
+[gd_scene load_steps=17 format=3 uid="uid://bjuuf3xbsrk8f"]
+
+[ext_resource type="Script" path="res://scripts/Fan.gd" id="1_bcb1h"]
+[ext_resource type="Texture2D" uid="uid://jep33i1yyl2f" path="res://assets/Traps/Fan/Off.png" id="1_gc6k1"]
+[ext_resource type="Texture2D" uid="uid://j4ijygp2stcg" path="res://assets/Traps/Fan/On (24x8).png" id="2_d7vh8"]
+[ext_resource type="Texture2D" uid="uid://d4ha024dxygwe" path="res://assets/Other/Dust Particle.png" id="3_g0i2r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oav0h"]
+atlas = ExtResource("2_d7vh8")
+region = Rect2(0, 0, 24, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_isug0"]
+atlas = ExtResource("2_d7vh8")
+region = Rect2(24, 0, 24, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qvbwt"]
+atlas = ExtResource("2_d7vh8")
+region = Rect2(48, 0, 24, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jtosr"]
+atlas = ExtResource("2_d7vh8")
+region = Rect2(72, 0, 24, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n8dx4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gc6k1")
+}],
+"loop": true,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oav0h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_isug0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qvbwt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jtosr")
+}],
+"loop": true,
+"name": &"on",
+"speed": 20.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2eouv"]
+size = Vector2(21, 7)
+
+[sub_resource type="Curve" id="Curve_b7qqf"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.496596), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_70hwt"]
+curve = SubResource("Curve_b7qqf")
+
+[sub_resource type="Gradient" id="Gradient_6ht2b"]
+offsets = PackedFloat32Array(0.166667, 0.333333, 0.5, 0.666667, 0.833333, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.964742, 0.964742, 0.964742, 1, 0.920995, 0.920994, 0.920995, 1, 0.886262, 0.886261, 0.886262, 1, 0.847475, 0.847474, 0.847475, 1, 0.716296, 0.716296, 0.716296, 1)
+metadata/_snap_count = 6
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jv4i8"]
+gradient = SubResource("Gradient_6ht2b")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_x7ybw"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 10.0
+inherit_velocity_ratio = 1.0
+direction = Vector3(0, -1, 0)
+spread = 15.0
+initial_velocity_max = 75.0
+gravity = Vector3(0, -98, 0)
+scale_max = 2.5
+scale_over_velocity_min = 0.7
+scale_over_velocity_max = 2.5
+color_ramp = SubResource("GradientTexture1D_jv4i8")
+alpha_curve = SubResource("CurveTexture_70hwt")
+turbulence_noise_speed = Vector3(0, -1, 0)
+turbulence_influence_min = 0.0
+turbulence_influence_max = 0.701
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5e6t8"]
+size = Vector2(21.2, 75)
+
+[node name="Fan" type="StaticBody2D"]
+position = Vector2(-1, 0)
+scale = Vector2(2.5, 2.5)
+script = ExtResource("1_bcb1h")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_n8dx4")
+animation = &"off"
+autoplay = "on"
+frame_progress = 0.645713
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_2eouv")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(0, -15.2)
+process_material = SubResource("ParticleProcessMaterial_x7ybw")
+texture = ExtResource("3_g0i2r")
+randomness = 1.0
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0.4, -28)
+collision_layer = 4096
+collision_mask = 4608
+gravity_space_override = 3
+gravity_point_center = Vector2(0, -1)
+gravity_direction = Vector2(0, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-4.76837e-08, -12.8)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_5e6t8")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_body_exited"]

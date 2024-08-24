@@ -54,6 +54,7 @@ right={
 2d_physics/layer_11="Checkpoints"
 2d_physics/layer_12="Collectables"
 2d_physics/layer_13="Props"
+2d_physics/layer_14="Powerups"
 
 [rendering]
 
