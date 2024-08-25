@@ -86,7 +86,7 @@ turbulence_influence_min = 0.0
 turbulence_influence_max = 0.701
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5e6t8"]
-size = Vector2(21.2, 75)
+size = Vector2(21.2, 70.3)
 
 [node name="Fan" type="StaticBody2D"]
 position = Vector2(-1, 0)
@@ -118,8 +118,7 @@ gravity_point_center = Vector2(0, -1)
 gravity_direction = Vector2(0, -1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-4.76837e-08, -12.8)
-scale = Vector2(1, 1)
+position = Vector2(0, -10)
 shape = SubResource("RectangleShape2D_5e6t8")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]

@@ -55,8 +55,7 @@ func _ready() -> void:
 		queue_free()
 
 func die() -> void:
-	#sprite.play('hit')
-	sprite.play('desappearing')
+	sprite.play('hit') 
 
 func set_spawn(position : Vector2) -> void:
 	current_spawn = position
@@ -66,6 +65,8 @@ func respawn() -> void:
 	global_position = current_spawn
 	
 func _on_sprite_animation_finished() -> void:
+	if sprite.animation == 'hit':
+		sprite.play("desappearing")
 	if sprite.animation == 'appearing':
 		sprite.play('idle')
 	elif sprite.animation == 'desappearing':
