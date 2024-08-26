@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://chehveapfrh67"]
 
 [ext_resource type="Shader" path="res://shaders/background.gdshader" id="1_t0xl7"]
-[ext_resource type="Texture2D" uid="uid://c6o3fx2rj4wly" path="res://assets/Background/Green.png" id="2_uvvby"]
+[ext_resource type="Texture2D" uid="uid://c6o3fx2rj4wly" path="res://Assets/Background/Green.png" id="2_uvvby"]
 [ext_resource type="TileSet" uid="uid://b13fwaevm0kgp" path="res://resources/tilesets/terrain.tres" id="3_d8vl5"]
 [ext_resource type="PackedScene" uid="uid://dordy3866ha6t" path="res://scenes/checkpoints/checkpoint.tscn" id="5_7kyqj"]
 [ext_resource type="PackedScene" uid="uid://dlwky5gpf67io" path="res://scenes/checkpoints/start.tscn" id="6_w104i"]

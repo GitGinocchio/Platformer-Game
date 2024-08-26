@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://3mluqf3qoms"
-path="res://.godot/imported/Rock2_Hit (32x28).png-5f3b58c19e12b0be3c97a480bccd4ea5.ctex"
+path="res://.godot/imported/Rock2_Hit (32x28).png-edbbfb802aeac5f95de44f7b32d58777.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Enemies/Rocks/Rock2_Hit (32x28).png"
-dest_files=["res://.godot/imported/Rock2_Hit (32x28).png-5f3b58c19e12b0be3c97a480bccd4ea5.ctex"]
+source_file="res://Assets/Enemies/Rocks/Rock2_Hit (32x28).png"
+dest_files=["res://.godot/imported/Rock2_Hit (32x28).png-edbbfb802aeac5f95de44f7b32d58777.ctex"]
 
 [params]
 

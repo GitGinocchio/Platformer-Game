@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://blyr281uesoda"
-path="res://.godot/imported/Double Jump (32x32).png-abdc4a21e583a8b2aac7e4cf69462e80.ctex"
+path="res://.godot/imported/Double Jump (32x32).png-cbc337c1407776cb10761674d0c8f86b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Main Characters/Virtual Guy/Double Jump (32x32).png"
-dest_files=["res://.godot/imported/Double Jump (32x32).png-abdc4a21e583a8b2aac7e4cf69462e80.ctex"]
+source_file="res://Assets/Main Characters/Virtual Guy/Double Jump (32x32).png"
+dest_files=["res://.godot/imported/Double Jump (32x32).png-cbc337c1407776cb10761674d0c8f86b.ctex"]
 
 [params]
 
