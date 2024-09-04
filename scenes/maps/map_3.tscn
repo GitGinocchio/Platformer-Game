@@ -3,7 +3,7 @@
 [ext_resource type="TileSet" uid="uid://b13fwaevm0kgp" path="res://resources/tilesets/terrain.tres" id="1_0jcac"]
 [ext_resource type="Shader" path="res://shaders/backgroundmenu.gdshader" id="1_ss1kl"]
 [ext_resource type="PackedScene" uid="uid://dlwky5gpf67io" path="res://scenes/checkpoints/start.tscn" id="2_ecrbe"]
-[ext_resource type="Texture2D" uid="uid://c6ggkyg5y2lj4" path="res://Assets/Background/Blue.png" id="2_qyma4"]
+[ext_resource type="Texture2D" uid="uid://c6ggkyg5y2lj4" path="res://assets/Background/Blue.png" id="2_qyma4"]
 [ext_resource type="PackedScene" uid="uid://dordy3866ha6t" path="res://scenes/checkpoints/checkpoint.tscn" id="2_yyyu6"]
 [ext_resource type="TileSet" uid="uid://cbacrf2yeh612" path="res://resources/tilesets/terrain_no_collisions.tres" id="3_w4sk6"]
 [ext_resource type="PackedScene" uid="uid://d218tnymjh7ds" path="res://scenes/collectables/fruit.tscn" id="5_khvfu"]
@@ -54,7 +54,6 @@ stretch_mode = 1
 [node name="Layers" type="Node2D" parent="."]
 
 [node name="Background" type="TileMapLayer" parent="Layers"]
-visible = false
 modulate = Color(0.65, 0.65, 0.65, 1)
 use_parent_material = true
 scale = Vector2(2.79334, 2.80637)

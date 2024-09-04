@@ -1,15 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://bfpvbyp3x25og"]
+[gd_scene load_steps=4 format=3 uid="uid://bfpvbyp3x25og"]
 
 [ext_resource type="PackedScene" uid="uid://b3jceichgrcoh" path="res://scenes/character/character.tscn" id="2_e46br"]
 [ext_resource type="SpriteFrames" uid="uid://bwcre7vjfwoci" path="res://resources/characters/ninja_frog.tres" id="2_g37vj"]
-[ext_resource type="PackedScene" uid="uid://wng650ncbmgb" path="res://scenes/maps/map_3.tscn" id="3_dllk3"]
-[ext_resource type="PackedScene" uid="uid://cosx0avayxlyh" path="res://scenes/traps/saw.tscn" id="5_d6vu7"]
+[ext_resource type="PackedScene" uid="uid://cw76g7ojxpu84" path="res://scenes/maps/map_4.tscn" id="3_6xupa"]
 
 [node name="Game" type="Node2D"]
 
 [node name="Character" parent="." instance=ExtResource("2_e46br")]
-position = Vector2(182, 233)
+position = Vector2(-114, 1996)
 Sprite_Frames = ExtResource("2_g37vj")
+
+[node name="Map3" parent="." instance=ExtResource("3_6xupa")]
+position = Vector2(-10, -11)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 visible = false
@@ -18,7 +20,3 @@ enabled = false
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0
 rotation_smoothing_enabled = true
-
-[node name="Map3" parent="." instance=ExtResource("3_dllk3")]
-
-[node name="Saw" parent="." instance=ExtResource("5_d6vu7")]
