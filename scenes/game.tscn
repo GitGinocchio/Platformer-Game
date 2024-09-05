@@ -8,6 +8,8 @@
 
 [node name="Character" parent="." instance=ExtResource("2_e46br")]
 Sprite_Frames = ExtResource("2_g37vj")
+ENABLE_DOUBLE_JUMP = false
+ENABLE_WALL_JUMP = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 visible = false
@@ -18,4 +20,3 @@ position_smoothing_speed = 2.0
 rotation_smoothing_enabled = true
 
 [node name="Map1_test" parent="." instance=ExtResource("3_bwnxp")]
-position = Vector2(-997, -921)

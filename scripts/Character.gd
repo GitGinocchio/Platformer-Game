@@ -55,22 +55,20 @@ func _ready() -> void:
 		queue_free()
 
 func die() -> void:
-	sprite.play('hit') 
+	velocity.y = JUMP_VELOCITY
+	$AnimationPlayer.play('die')
 
 func set_spawn(position : Vector2) -> void:
 	current_spawn = position
 
 func respawn() -> void:
-	sprite.play('appearing')
+	$Collision.set("disabled",false)
 	global_position = current_spawn
+	sprite.play('appearing')
 	
 func _on_sprite_animation_finished() -> void:
-	if sprite.animation == 'hit':
-		sprite.play("desappearing")
 	if sprite.animation == 'appearing':
 		sprite.play('idle')
-	elif sprite.animation == 'desappearing':
-		respawn()
 	elif sprite.animation == 'jump':
 		velocity.x = 0
 		sprite.play('fall')
@@ -84,7 +82,12 @@ func _on_cooldown_timeout() -> void:
 	pass # Replace with function body.
 		
 func _physics_process(delta: float) -> void:
-	if sprite.animation in ['appearing','desappearing', 'hit']: return
+	if sprite.animation in ['appearing','desappearing']: return
+	
+	if sprite.animation in ['hit']:
+		velocity.y += GRAVITY * delta
+		move_and_slide()
+		return
 	
 	if is_on_wall_only() and ENABLE_WALL_JUMP:
 		if velocity.y < 0: 
@@ -184,11 +187,13 @@ func _physics_process(delta: float) -> void:
 
 		elif not first_jumped and not is_on_floor():
 			sprite.play('jump')
+			velocity.x = move_toward(velocity.x, 0, SPEED)
 			velocity.y = JUMP_VELOCITY
 			first_jumped = true
 		
 		elif is_on_floor():
 			sprite.play('jump')
+			velocity.x = move_toward(velocity.x, 0, SPEED)
 			velocity.y = JUMP_VELOCITY
 			first_jumped = true
 		

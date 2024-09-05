@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=4 uid="uid://cw76g7ojxpu84"]
 
 [ext_resource type="Shader" path="res://shaders/backgroundmenu.gdshader" id="1_x64ea"]
-[ext_resource type="Texture2D" uid="uid://c6ggkyg5y2lj4" path="res://assets/Background/Blue.png" id="2_juidg"]
+[ext_resource type="Texture2D" uid="uid://c6ggkyg5y2lj4" path="res://Assets/Background/Blue.png" id="2_juidg"]
 [ext_resource type="TileSet" uid="uid://cbacrf2yeh612" path="res://resources/tilesets/terrain_no_collisions.tres" id="3_qmo8s"]
 [ext_resource type="TileSet" uid="uid://b13fwaevm0kgp" path="res://resources/tilesets/terrain.tres" id="4_5h3pg"]
 [ext_resource type="PackedScene" uid="uid://d218tnymjh7ds" path="res://scenes/collectables/fruit.tscn" id="5_13wis"]

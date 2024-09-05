@@ -1,13 +1,14 @@
-[gd_scene load_steps=10 format=4 uid="uid://wng650ncbmgb"]
+[gd_scene load_steps=11 format=4 uid="uid://wng650ncbmgb"]
 
 [ext_resource type="TileSet" uid="uid://b13fwaevm0kgp" path="res://resources/tilesets/terrain.tres" id="1_0jcac"]
 [ext_resource type="Shader" path="res://shaders/backgroundmenu.gdshader" id="1_ss1kl"]
 [ext_resource type="PackedScene" uid="uid://dlwky5gpf67io" path="res://resources/checkpoints/start.tscn" id="2_ecrbe"]
-[ext_resource type="Texture2D" uid="uid://c6ggkyg5y2lj4" path="res://assets/Background/Blue.png" id="2_qyma4"]
+[ext_resource type="Texture2D" uid="uid://c6ggkyg5y2lj4" path="res://Assets/Background/Blue.png" id="2_qyma4"]
 [ext_resource type="PackedScene" uid="uid://dordy3866ha6t" path="res://resources/checkpoints/checkpoint.tscn" id="2_yyyu6"]
 [ext_resource type="TileSet" uid="uid://cbacrf2yeh612" path="res://resources/tilesets/terrain_no_collisions.tres" id="3_w4sk6"]
 [ext_resource type="PackedScene" uid="uid://d218tnymjh7ds" path="res://scenes/collectables/fruit.tscn" id="5_khvfu"]
 [ext_resource type="PackedScene" uid="uid://bxx3wt5bjhcqu" path="res://resources/checkpoints/end.tscn" id="7_jirk0"]
+[ext_resource type="PackedScene" uid="uid://ciq5r6tkx7oxx" path="res://scenes/objects/palms/front_palm.tscn" id="9_hwf2x"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_aifu6"]
 shader = ExtResource("1_ss1kl")
@@ -54,6 +55,7 @@ stretch_mode = 1
 [node name="Layers" type="Node2D" parent="."]
 
 [node name="Background" type="TileMapLayer" parent="Layers"]
+visible = false
 modulate = Color(0.65, 0.65, 0.65, 1)
 use_parent_material = true
 scale = Vector2(2.79334, 2.80637)
@@ -72,6 +74,7 @@ modulate = Color(0.65, 0.65, 0.65, 1)
 z_index = 11
 use_parent_material = true
 scale = Vector2(2.79334, 2.80637)
+tile_map_data = PackedByteArray("AAAIAAgAAgAAAAAAAAANAAgAAgACAAAAAAATAAkAAgAAAAAAAAA=")
 tile_set = ExtResource("1_0jcac")
 
 [node name="Collectables" type="Node2D" parent="."]
@@ -185,3 +188,12 @@ position = Vector2(154, 233)
 
 [node name="Checkpoint" parent="Checkpoints" instance=ExtResource("2_yyyu6")]
 position = Vector2(1144, 115.8)
+
+[node name="Front Palm" parent="." instance=ExtResource("9_hwf2x")]
+position = Vector2(377, 252)
+
+[node name="Front Palm2" parent="." instance=ExtResource("9_hwf2x")]
+position = Vector2(559, 297)
+
+[node name="Front Palm3" parent="." instance=ExtResource("9_hwf2x")]
+position = Vector2(868, 297)

@@ -1,12 +1,12 @@
 [gd_scene load_steps=24 format=3 uid="uid://di7nvwxljwadu"]
 
 [ext_resource type="Script" path="res://scripts/Box.gd" id="1_tgp0s"]
-[ext_resource type="Texture2D" uid="uid://dmx8gd45p0s6l" path="res://assets/Items/Boxes/Box1/Hit (28x24).png" id="2_hp6w7"]
-[ext_resource type="Texture2D" uid="uid://bmnk8x1c3hxa4" path="res://assets/Items/Boxes/Box2/Hit (28x24).png" id="3_ggcnr"]
-[ext_resource type="Texture2D" uid="uid://omdx64fbokdv" path="res://assets/Items/Boxes/Box3/Hit (28x24).png" id="4_owayx"]
-[ext_resource type="Texture2D" uid="uid://cnlx8vpitajkr" path="res://assets/Items/Boxes/Box1/Idle.png" id="5_g5qvt"]
-[ext_resource type="Texture2D" uid="uid://cblr34trjqsxl" path="res://assets/Items/Boxes/Box2/Idle.png" id="6_6vbpj"]
-[ext_resource type="Texture2D" uid="uid://cvxq5yw8kcny5" path="res://assets/Items/Boxes/Box3/Idle.png" id="7_cvjvm"]
+[ext_resource type="Texture2D" uid="uid://dmx8gd45p0s6l" path="res://Assets/Items/Boxes/Box1/Hit (28x24).png" id="2_hp6w7"]
+[ext_resource type="Texture2D" uid="uid://bmnk8x1c3hxa4" path="res://Assets/Items/Boxes/Box2/Hit (28x24).png" id="3_ggcnr"]
+[ext_resource type="Texture2D" uid="uid://omdx64fbokdv" path="res://Assets/Items/Boxes/Box3/Hit (28x24).png" id="4_owayx"]
+[ext_resource type="Texture2D" uid="uid://cnlx8vpitajkr" path="res://Assets/Items/Boxes/Box1/Idle.png" id="5_g5qvt"]
+[ext_resource type="Texture2D" uid="uid://cblr34trjqsxl" path="res://Assets/Items/Boxes/Box2/Idle.png" id="6_6vbpj"]
+[ext_resource type="Texture2D" uid="uid://cvxq5yw8kcny5" path="res://Assets/Items/Boxes/Box3/Idle.png" id="7_cvjvm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u60a8"]
 atlas = ExtResource("2_hp6w7")
@@ -179,7 +179,7 @@ _data = {
 [node name="Box" type="RigidBody2D"]
 z_index = 9
 collision_layer = 4096
-collision_mask = 4609
+collision_mask = 20993
 script = ExtResource("1_tgp0s")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

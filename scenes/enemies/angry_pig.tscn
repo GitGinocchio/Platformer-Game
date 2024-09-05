@@ -1,11 +1,40 @@
-[gd_scene load_steps=57 format=3 uid="uid://clnfvaftln1r2"]
+[gd_scene load_steps=68 format=3 uid="uid://clnfvaftln1r2"]
 
 [ext_resource type="Script" path="res://scripts/angry_pig.gd" id="1_amcbs"]
 [ext_resource type="Texture2D" uid="uid://dcbiacyllm7mj" path="res://Assets/Enemies/AngryPig/Hit 1 (36x30).png" id="1_wlym2"]
 [ext_resource type="Texture2D" uid="uid://tqbhb3bncf0f" path="res://Assets/Enemies/AngryPig/Hit 2 (36x30).png" id="2_7xlol"]
+[ext_resource type="Texture2D" uid="uid://srha6hva1n44" path="res://Assets/Main Characters/Desappearing (96x96).png" id="2_x3xvg"]
 [ext_resource type="Texture2D" uid="uid://wokd5bq4465m" path="res://Assets/Enemies/AngryPig/Idle (36x30).png" id="3_0yetb"]
 [ext_resource type="Texture2D" uid="uid://dn3vqe3cqckdj" path="res://Assets/Enemies/AngryPig/Run (36x30).png" id="4_au200"]
 [ext_resource type="Texture2D" uid="uid://chbilolawjyup" path="res://Assets/Enemies/AngryPig/Walk (36x30).png" id="5_nnx6q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v27xr"]
+atlas = ExtResource("2_x3xvg")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3w47h"]
+atlas = ExtResource("2_x3xvg")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cycik"]
+atlas = ExtResource("2_x3xvg")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_73i6v"]
+atlas = ExtResource("2_x3xvg")
+region = Rect2(288, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tnyln"]
+atlas = ExtResource("2_x3xvg")
+region = Rect2(384, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_150c5"]
+atlas = ExtResource("2_x3xvg")
+region = Rect2(480, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijco5"]
+atlas = ExtResource("2_x3xvg")
+region = Rect2(576, 0, 96, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ynxut"]
 atlas = ExtResource("1_wlym2")
@@ -199,6 +228,32 @@ region = Rect2(540, 0, 36, 30)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_v27xr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3w47h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cycik")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_73i6v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tnyln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_150c5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ijco5")
+}],
+"loop": false,
+"name": &"desappearing",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_ynxut")
 }, {
 "duration": 1.0,
@@ -371,19 +426,85 @@ height = 25.6
 [sub_resource type="CircleShape2D" id="CircleShape2D_d4tkw"]
 radius = 65.0
 
+[sub_resource type="Animation" id="Animation_pp3rf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_l67yv"]
+resource_name = "die"
+length = 2.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [&"hit2", 1.0, false],
+"method": &"play"
+}, {
+"args": [&"desappearing", 1.0, false],
+"method": &"play"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.43333, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.5708, 0.0]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tx2ke"]
+_data = {
+"RESET": SubResource("Animation_pp3rf"),
+"die": SubResource("Animation_l67yv")
+}
+
 [node name="AngryPig" type="CharacterBody2D"]
 z_index = 12
 scale = Vector2(2.5, 2.5)
 collision_layer = 16384
-collision_mask = 513
+collision_mask = 20481
 script = ExtResource("1_amcbs")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_0esj8")
-animation = &"hit2"
+animation = &"walk"
 autoplay = "idle"
-frame = 4
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1.6)
@@ -393,27 +514,40 @@ shape = SubResource("CapsuleShape2D_pbhn8")
 
 [node name="WallLeft" type="RayCast2D" parent="RayCasts"]
 target_position = Vector2(-15, 0)
+collision_mask = 4097
 
 [node name="WallRight" type="RayCast2D" parent="RayCasts"]
 target_position = Vector2(15, 0)
+collision_mask = 4097
 
 [node name="GroundLeftDown" type="RayCast2D" parent="RayCasts"]
 target_position = Vector2(-20, 20)
+collision_mask = 4097
 
 [node name="GroundRightDown" type="RayCast2D" parent="RayCasts"]
 target_position = Vector2(20, 20)
+collision_mask = 4097
 
-[node name="PlayerLeft" type="RayCast2D" parent="RayCasts"]
+[node name="PlayerFarLeft" type="RayCast2D" parent="RayCasts"]
 target_position = Vector2(-150, 0)
 collision_mask = 512
 hit_from_inside = true
 
-[node name="PlayerRight" type="RayCast2D" parent="RayCasts"]
+[node name="PlayerFarRight" type="RayCast2D" parent="RayCasts"]
 target_position = Vector2(150, 0)
 collision_mask = 512
 hit_from_inside = true
 
-[node name="PlayerTop" type="RayCast2D" parent="RayCasts"]
+[node name="PlayerCloseLeft" type="RayCast2D" parent="RayCasts"]
+target_position = Vector2(-15, 0)
+collision_mask = 512
+
+[node name="PlayerCloseRight" type="RayCast2D" parent="RayCasts"]
+target_position = Vector2(15, 0)
+collision_mask = 512
+
+[node name="PlayerCloseTop" type="RayCast2D" parent="RayCasts"]
+scale = Vector2(4, 1)
 target_position = Vector2(0, -15)
 collision_mask = 512
 hit_from_inside = true
@@ -427,6 +561,11 @@ collision_mask = 512
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TriggeredArea"]
 shape = SubResource("CircleShape2D_d4tkw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_tx2ke")
+}
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="ChangeDirectionCooldown" to="." method="_on_change_direction_cooldown_timeout"]
