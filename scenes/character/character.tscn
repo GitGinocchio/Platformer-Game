@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/Character.gd" id="1_nxohu"]
 [ext_resource type="SpriteFrames" uid="uid://bwcre7vjfwoci" path="res://resources/characters/ninja_frog.tres" id="2_dlexo"]
-[ext_resource type="Texture2D" uid="uid://d4ha024dxygwe" path="res://assets/Other/Dust Particle.png" id="9_0gcq8"]
+[ext_resource type="Texture2D" uid="uid://d4ha024dxygwe" path="res://Assets/Other/Dust Particle.png" id="9_0gcq8"]
 [ext_resource type="Script" path="res://scripts/DustParticles.gd" id="10_yrkyl"]
 
 [sub_resource type="Curve" id="Curve_5jln8"]
@@ -62,7 +62,7 @@ height = 26.0
 [node name="Character" type="CharacterBody2D" groups=["Player"]]
 z_index = 10
 collision_layer = 512
-collision_mask = 15873
+collision_mask = 32257
 script = ExtResource("1_nxohu")
 Randomize = true
 GRAVITY = 1200

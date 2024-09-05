@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bdo5fmb28g8rb"
-path="res://.godot/imported/Flying (32x32).png-b86cec24076e5097040f40f231e89fcc.ctex"
+path="res://.godot/imported/Flying (32x32).png-bac2f7e69fec94388b444877efab3116.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Enemies/BlueBird/Flying (32x32).png"
-dest_files=["res://.godot/imported/Flying (32x32).png-b86cec24076e5097040f40f231e89fcc.ctex"]
+source_file="res://Assets/Enemies/BlueBird/Flying (32x32).png"
+dest_files=["res://.godot/imported/Flying (32x32).png-bac2f7e69fec94388b444877efab3116.ctex"]
 
 [params]
 
