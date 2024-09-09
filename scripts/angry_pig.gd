@@ -85,13 +85,13 @@ func _physics_process(delta: float) -> void:
 			sprite.play('walk')
 			angry = false
 	
-	if PCT_RayCast.is_colliding() and not ontop and n_hit < max_hit:
-		sprite.play('hit1')
+	if PCT_RayCast.is_colliding() and not ontop:
 		n_hit+=1
-		ontop = true
-	elif PCT_RayCast.is_colliding() and not ontop and n_hit >= max_hit:
-		sprite.play('hit2')
-		die()
+		if n_hit < max_hit:
+			sprite.play('hit1')
+			ontop = true
+		else:
+			die()
 	elif not PCT_RayCast.is_colliding() and ontop:
 		ontop = false
 		

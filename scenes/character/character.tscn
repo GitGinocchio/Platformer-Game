@@ -147,8 +147,6 @@ collision_layer = 512
 collision_mask = 32257
 script = ExtResource("1_nxohu")
 Randomize = true
-ENABLE_DOUBLE_JUMP = true
-ENABLE_WALL_JUMP = true
 GRAVITY = 1200
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
@@ -176,6 +174,7 @@ shape = SubResource("CapsuleShape2D_7vexs")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
+position_smoothing_speed = 3.0
 
 [node name="Cooldown" type="Timer" parent="."]
 one_shot = true
