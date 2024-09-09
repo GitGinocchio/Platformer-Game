@@ -8,13 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://dkw7xn687cmen" path="res://Assets/Enemies/Bat/Idle (46x30).png" id="2_56d07"]
 [ext_resource type="Texture2D" uid="uid://srha6hva1n44" path="res://Assets/Main Characters/Desappearing (96x96).png" id="4_dj4q3"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8vcms"]
-radius = 7.2
-height = 24.8
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_asrhr"]
-radius = 170.0
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_b1lnm"]
 atlas = ExtResource("1_mvvb3")
 region = Rect2(0, 0, 46, 30)
@@ -363,6 +356,13 @@ animations = [{
 "speed": 20.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8vcms"]
+radius = 7.2
+height = 24.8
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_asrhr"]
+radius = 170.0
+
 [sub_resource type="Animation" id="Animation_ouooi"]
 resource_name = "die"
 length = 2.0
@@ -424,6 +424,12 @@ collision_layer = 16384
 collision_mask = 20993
 script = ExtResource("1_sb4nl")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_838da")
+animation = &"idle"
+autoplay = "idle"
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_8vcms")
 
@@ -434,12 +440,6 @@ collision_mask = 512
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerArea"]
 shape = SubResource("CircleShape2D_asrhr")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(1, 1)
-sprite_frames = SubResource("SpriteFrames_838da")
-animation = &"flying"
-autoplay = "idle"
 
 [node name="Raycasts" type="Node2D" parent="."]
 
@@ -465,6 +465,6 @@ libraries = {
 "": SubResource("AnimationLibrary_4vlby")
 }
 
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animation_finished"]
 [connection signal="body_entered" from="TriggerArea" to="." method="_on_trigger_area_body_entered"]
 [connection signal="body_exited" from="TriggerArea" to="." method="_on_trigger_area_body_exited"]
-[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animation_finished"]
