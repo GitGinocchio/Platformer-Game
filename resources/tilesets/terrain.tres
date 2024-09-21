@@ -1,8 +1,8 @@
 [gd_resource type="TileSet" load_steps=8 format=3 uid="uid://b13fwaevm0kgp"]
 
-[ext_resource type="Texture2D" uid="uid://1r5k812oi3ok" path="res://Assets/Terrain/Terrain (16x16).png" id="1_lb1ow"]
-[ext_resource type="Texture2D" uid="uid://crpwwx788i4v3" path="res://Assets/Terrain/Terrain2 (16x16).png" id="2_y352u"]
-[ext_resource type="Texture2D" uid="uid://cs8486wr1waye" path="res://Assets/Items/Front Palm Trees/Front Palm Bottom and Grass (32x32).png" id="3_x7fop"]
+[ext_resource type="Texture2D" uid="uid://1r5k812oi3ok" path="res://assets/Terrain/Terrain (16x16).png" id="1_lb1ow"]
+[ext_resource type="Texture2D" uid="uid://crpwwx788i4v3" path="res://assets/Terrain/Terrain2 (16x16).png" id="2_y352u"]
+[ext_resource type="Texture2D" uid="uid://cs8486wr1waye" path="res://assets/Items/Front Palm Trees/Front Palm Bottom and Grass (32x32).png" id="3_x7fop"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wslov"]
 

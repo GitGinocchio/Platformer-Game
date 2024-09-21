@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dkw7xn687cmen"
-path="res://.godot/imported/Idle (46x30).png-27177b09aa0564759015ef44ec0b881d.ctex"
+path="res://.godot/imported/Idle (46x30).png-2ab2beae2ba2e6ad8961a7a0b3ce1808.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Enemies/Bat/Idle (46x30).png"
-dest_files=["res://.godot/imported/Idle (46x30).png-27177b09aa0564759015ef44ec0b881d.ctex"]
+source_file="res://assets/Enemies/Bat/Idle (46x30).png"
+dest_files=["res://.godot/imported/Idle (46x30).png-2ab2beae2ba2e6ad8961a7a0b3ce1808.ctex"]
 
 [params]
 

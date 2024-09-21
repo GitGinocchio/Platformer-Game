@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cxc6treeavg3k"
-path="res://.godot/imported/Walk (38x24).png-aef2d54582a8ad488a5f8edf68261248.ctex"
+path="res://.godot/imported/Walk (38x24).png-8bc67d6d7d99507348da5f0002b7a9cd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Enemies/Snail/Walk (38x24).png"
-dest_files=["res://.godot/imported/Walk (38x24).png-aef2d54582a8ad488a5f8edf68261248.ctex"]
+source_file="res://assets/Enemies/Snail/Walk (38x24).png"
+dest_files=["res://.godot/imported/Walk (38x24).png-8bc67d6d7d99507348da5f0002b7a9cd.ctex"]
 
 [params]
 

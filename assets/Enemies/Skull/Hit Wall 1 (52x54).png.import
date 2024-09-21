@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b7uboxgh3wod3"
-path="res://.godot/imported/Hit Wall 1 (52x54).png-84af568a8b6a11c40507384c1f4c98f0.ctex"
+path="res://.godot/imported/Hit Wall 1 (52x54).png-da8ce6f8bd449b439ad093460ee2362b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Enemies/Skull/Hit Wall 1 (52x54).png"
-dest_files=["res://.godot/imported/Hit Wall 1 (52x54).png-84af568a8b6a11c40507384c1f4c98f0.ctex"]
+source_file="res://assets/Enemies/Skull/Hit Wall 1 (52x54).png"
+dest_files=["res://.godot/imported/Hit Wall 1 (52x54).png-da8ce6f8bd449b439ad093460ee2362b.ctex"]
 
 [params]
 

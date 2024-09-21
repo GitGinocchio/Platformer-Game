@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://f0gqj2yum8fh"
-path="res://.godot/imported/Run (34x44).png-598c1d0b949a145f289c276223455f2a.ctex"
+path="res://.godot/imported/Run (34x44).png-ac3535602721dbc458143a8c7969a594.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Enemies/Bunny/Run (34x44).png"
-dest_files=["res://.godot/imported/Run (34x44).png-598c1d0b949a145f289c276223455f2a.ctex"]
+source_file="res://assets/Enemies/Bunny/Run (34x44).png"
+dest_files=["res://.godot/imported/Run (34x44).png-ac3535602721dbc458143a8c7969a594.ctex"]
 
 [params]
 
