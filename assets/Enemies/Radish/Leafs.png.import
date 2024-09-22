@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://djp8y0vo0qy5w"
-path="res://.godot/imported/Leafs.png-1d671694acefa0b5effbe935399b0fb3.ctex"
+path="res://.godot/imported/Leafs.png-295e64ab2b7f3a95fb6b72325df099f0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Enemies/Radish/Leafs.png"
-dest_files=["res://.godot/imported/Leafs.png-1d671694acefa0b5effbe935399b0fb3.ctex"]
+source_file="res://assets/Enemies/Radish/Leafs.png"
+dest_files=["res://.godot/imported/Leafs.png-295e64ab2b7f3a95fb6b72325df099f0.ctex"]
 
 [params]
 

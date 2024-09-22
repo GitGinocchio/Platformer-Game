@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://ciq5r6tkx7oxx"]
 
-[ext_resource type="Texture2D" uid="uid://ei78o3qagudk" path="res://Assets/Items/Front Palm Trees/Front Palm Tree Top 01.png" id="1_0qqpn"]
-[ext_resource type="Texture2D" uid="uid://b1uasjf3g1t13" path="res://Assets/Items/Front Palm Trees/Front Palm Tree Top 02.png" id="2_2xy1k"]
-[ext_resource type="Texture2D" uid="uid://d1vurknu43bcn" path="res://Assets/Items/Front Palm Trees/Front Palm Tree Top 03.png" id="3_ekvu8"]
-[ext_resource type="Texture2D" uid="uid://c1mfryex8jixu" path="res://Assets/Items/Front Palm Trees/Front Palm Tree Top 04.png" id="4_t1cup"]
+[ext_resource type="Texture2D" uid="uid://ei78o3qagudk" path="res://assets/Items/Front Palm Trees/Front Palm Tree Top 01.png" id="1_0qqpn"]
+[ext_resource type="Texture2D" uid="uid://b1uasjf3g1t13" path="res://assets/Items/Front Palm Trees/Front Palm Tree Top 02.png" id="2_2xy1k"]
+[ext_resource type="Texture2D" uid="uid://d1vurknu43bcn" path="res://assets/Items/Front Palm Trees/Front Palm Tree Top 03.png" id="3_ekvu8"]
+[ext_resource type="Texture2D" uid="uid://c1mfryex8jixu" path="res://assets/Items/Front Palm Trees/Front Palm Tree Top 04.png" id="4_t1cup"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bfdig"]
 animations = [{

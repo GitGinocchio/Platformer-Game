@@ -56,6 +56,7 @@ right={
 2d_physics/layer_13="Props"
 2d_physics/layer_14="Powerups"
 2d_physics/layer_15="Enemies"
+2d_physics/layer_16="Bullets"
 
 [rendering]
 

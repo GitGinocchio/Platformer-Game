@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://upocnbtybmol"
-path="res://.godot/imported/Hit (44x42).png-12b7e7fa55622af4aae46b7a09670e90.ctex"
+path="res://.godot/imported/Hit (44x42).png-717edba42ba82dedfbaabf716389b665.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Enemies/Plant/Hit (44x42).png"
-dest_files=["res://.godot/imported/Hit (44x42).png-12b7e7fa55622af4aae46b7a09670e90.ctex"]
+source_file="res://assets/Enemies/Plant/Hit (44x42).png"
+dest_files=["res://.godot/imported/Hit (44x42).png-717edba42ba82dedfbaabf716389b665.ctex"]
 
 [params]
 

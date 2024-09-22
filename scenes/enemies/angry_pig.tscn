@@ -1,12 +1,12 @@
 [gd_scene load_steps=68 format=3 uid="uid://clnfvaftln1r2"]
 
 [ext_resource type="Script" path="res://scripts/angry_pig.gd" id="1_amcbs"]
-[ext_resource type="Texture2D" uid="uid://dcbiacyllm7mj" path="res://Assets/Enemies/AngryPig/Hit 1 (36x30).png" id="1_wlym2"]
-[ext_resource type="Texture2D" uid="uid://tqbhb3bncf0f" path="res://Assets/Enemies/AngryPig/Hit 2 (36x30).png" id="2_7xlol"]
-[ext_resource type="Texture2D" uid="uid://srha6hva1n44" path="res://Assets/Main Characters/Desappearing (96x96).png" id="2_x3xvg"]
-[ext_resource type="Texture2D" uid="uid://wokd5bq4465m" path="res://Assets/Enemies/AngryPig/Idle (36x30).png" id="3_0yetb"]
-[ext_resource type="Texture2D" uid="uid://dn3vqe3cqckdj" path="res://Assets/Enemies/AngryPig/Run (36x30).png" id="4_au200"]
-[ext_resource type="Texture2D" uid="uid://chbilolawjyup" path="res://Assets/Enemies/AngryPig/Walk (36x30).png" id="5_nnx6q"]
+[ext_resource type="Texture2D" uid="uid://dcbiacyllm7mj" path="res://assets/Enemies/AngryPig/Hit 1 (36x30).png" id="1_wlym2"]
+[ext_resource type="Texture2D" uid="uid://tqbhb3bncf0f" path="res://assets/Enemies/AngryPig/Hit 2 (36x30).png" id="2_7xlol"]
+[ext_resource type="Texture2D" uid="uid://srha6hva1n44" path="res://assets/Main Characters/Desappearing (96x96).png" id="2_x3xvg"]
+[ext_resource type="Texture2D" uid="uid://wokd5bq4465m" path="res://assets/Enemies/AngryPig/Idle (36x30).png" id="3_0yetb"]
+[ext_resource type="Texture2D" uid="uid://dn3vqe3cqckdj" path="res://assets/Enemies/AngryPig/Run (36x30).png" id="4_au200"]
+[ext_resource type="Texture2D" uid="uid://chbilolawjyup" path="res://assets/Enemies/AngryPig/Walk (36x30).png" id="5_nnx6q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v27xr"]
 atlas = ExtResource("2_x3xvg")

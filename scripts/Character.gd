@@ -17,7 +17,7 @@ extends CharacterBody2D
 @export var ENABLE_DOUBLE_JUMP = false
 @export var ENABLE_WALL_JUMP = false
 
-@export var SPEED = 300.0
+@export var SPEED = 250.0
 
 @export var JUMP_VELOCITY = -500.0
 @export var DOUBLE_JUMP_VELOCITY = -500.0

@@ -64,6 +64,12 @@ func _physics_process(delta: float) -> void:
 			character.global_position.y + y_offset,
 			y_velocity)
 		move_and_slide()
+		
+		if character.global_position.x - global_position.x < 0:
+			sprite.flip_h = false
+		else:
+			sprite.flip_h = true
+		
 	elif coming_back:
 		global_position.x = move_toward(
 			global_position.x,
@@ -79,6 +85,11 @@ func _physics_process(delta: float) -> void:
 			flying = false
 			coming_back = false
 			sprite.play('idle')
+			
+		if spawn.x - global_position.x < 0:
+			sprite.flip_h = false
+		else:
+			sprite.flip_h = true
 			
 	
 	if T_RayCast.is_colliding():
