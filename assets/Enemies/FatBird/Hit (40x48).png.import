@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cd0cc3xo5qgbj"
-path="res://.godot/imported/Hit (40x48).png-ce0921c507d40d014295d78dd6e9a350.ctex"
+path="res://.godot/imported/hit (40x48).png-5679ab827464c6b8e644c556095016aa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Enemies/FatBird/Hit (40x48).png"
-dest_files=["res://.godot/imported/Hit (40x48).png-ce0921c507d40d014295d78dd6e9a350.ctex"]
+source_file="res://assets/enemies/fatbird/hit (40x48).png"
+dest_files=["res://.godot/imported/hit (40x48).png-5679ab827464c6b8e644c556095016aa.ctex"]
 
 [params]
 

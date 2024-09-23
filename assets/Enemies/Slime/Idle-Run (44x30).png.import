@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dq63nelktbsp"
-path="res://.godot/imported/Idle-Run (44x30).png-a07cf23598a2cc62436450d5fbae5902.ctex"
+path="res://.godot/imported/idle-run (44x30).png-0669290fab145038a93230cca6c44f02.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Enemies/Slime/Idle-Run (44x30).png"
-dest_files=["res://.godot/imported/Idle-Run (44x30).png-a07cf23598a2cc62436450d5fbae5902.ctex"]
+source_file="res://assets/enemies/slime/idle-run (44x30).png"
+dest_files=["res://.godot/imported/idle-run (44x30).png-0669290fab145038a93230cca6c44f02.ctex"]
 
 [params]
 

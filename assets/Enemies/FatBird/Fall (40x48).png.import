@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://3r2yphbgnqqe"
-path="res://.godot/imported/Fall (40x48).png-5ede4893ad11a937f50a9fe2cc49e960.ctex"
+path="res://.godot/imported/fall (40x48).png-e6459715aa52106b90069589e54d919a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Enemies/FatBird/Fall (40x48).png"
-dest_files=["res://.godot/imported/Fall (40x48).png-5ede4893ad11a937f50a9fe2cc49e960.ctex"]
+source_file="res://assets/enemies/fatbird/fall (40x48).png"
+dest_files=["res://.godot/imported/fall (40x48).png-e6459715aa52106b90069589e54d919a.ctex"]
 
 [params]
 

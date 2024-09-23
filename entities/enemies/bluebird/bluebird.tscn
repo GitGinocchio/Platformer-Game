@@ -1,0 +1,175 @@
+[gd_scene load_steps=20 format=3 uid="uid://nak3ynf8wawh"]
+
+[ext_resource type="Texture2D" uid="uid://bdo5fmb28g8rb" path="res://assets/enemies/bluebird/flying (32x32).png" id="1_syp77"]
+[ext_resource type="Texture2D" uid="uid://o4umldcsqjll" path="res://assets/enemies/bluebird/hit (32x32).png" id="2_qgq0d"]
+
+[sub_resource type="GDScript" id="GDScript_h66mj"]
+script/source = "extends Path2D
+
+
+@onready var path: PathFollow2D = $Path
+@onready var body: CharacterBody2D = %Character
+@onready var sprite: AnimatedSprite2D = %Sprite
+
+
+@export var Speed : float = 0.5
+
+var direction = 1
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+	
+func _physics_process(delta: float) -> void:
+	path.progress += direction * Speed
+	if path.progress_ratio >= 1 or path.progress_ratio <= 0:
+		direction = -direction
+	
+	sprite.flip_h = true if direction == 1 else false
+		
+	#body.move_and_slide()
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_54fve"]
+size = Vector2(22, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yw6qm"]
+atlas = ExtResource("1_syp77")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6rlyj"]
+atlas = ExtResource("1_syp77")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k08b7"]
+atlas = ExtResource("1_syp77")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ga8cx"]
+atlas = ExtResource("1_syp77")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7fbnp"]
+atlas = ExtResource("1_syp77")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xlilv"]
+atlas = ExtResource("1_syp77")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31oy3"]
+atlas = ExtResource("1_syp77")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vt2pf"]
+atlas = ExtResource("1_syp77")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_252ge"]
+atlas = ExtResource("1_syp77")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2udne"]
+atlas = ExtResource("2_qgq0d")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yixtq"]
+atlas = ExtResource("2_qgq0d")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ag1e"]
+atlas = ExtResource("2_qgq0d")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7tc6"]
+atlas = ExtResource("2_qgq0d")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x5b76"]
+atlas = ExtResource("2_qgq0d")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ugp6b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yw6qm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6rlyj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k08b7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ga8cx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7fbnp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xlilv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31oy3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vt2pf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_252ge")
+}],
+"loop": true,
+"name": &"flying",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2udne")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yixtq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ag1e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d7tc6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x5b76")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 20.0
+}]
+
+[node name="BlueBird" type="Path2D"]
+script = SubResource("GDScript_h66mj")
+
+[node name="Path" type="PathFollow2D" parent="."]
+rotates = false
+loop = false
+
+[node name="Character" type="CharacterBody2D" parent="Path"]
+unique_name_in_owner = true
+z_index = 11
+scale = Vector2(2.5, 2.5)
+collision_layer = 16384
+collision_mask = 4609
+
+[node name="Collision" type="CollisionShape2D" parent="Path/Character"]
+position = Vector2(0.999999, 2)
+rotation = -3.14159
+shape = SubResource("RectangleShape2D_54fve")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="Path/Character"]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_ugp6b")
+animation = &"flying"
+autoplay = "flying"
+frame_progress = 0.815508

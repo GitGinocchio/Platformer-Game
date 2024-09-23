@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bd8nmst5jijjm"
-path="res://.godot/imported/Fall (36x36).png-e69a1f523a92391606c4556ff7026da9.ctex"
+path="res://.godot/imported/fall (36x36).png-672eee37d77b66e3c507de1a9e932395.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Enemies/Duck/Fall (36x36).png"
-dest_files=["res://.godot/imported/Fall (36x36).png-e69a1f523a92391606c4556ff7026da9.ctex"]
+source_file="res://assets/enemies/duck/fall (36x36).png"
+dest_files=["res://.godot/imported/fall (36x36).png-672eee37d77b66e3c507de1a9e932395.ctex"]
 
 [params]
 

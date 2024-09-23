@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cqpgjc2dnsehm"
-path="res://.godot/imported/Run (30x38).png-7711a9b3cfdc0b4a88d78f13c151decc.ctex"
+path="res://.godot/imported/run (30x38).png-ae727454d26988d13a91e1dba9f0de34.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Enemies/Radish/Run (30x38).png"
-dest_files=["res://.godot/imported/Run (30x38).png-7711a9b3cfdc0b4a88d78f13c151decc.ctex"]
+source_file="res://assets/enemies/radish/run (30x38).png"
+dest_files=["res://.godot/imported/run (30x38).png-ae727454d26988d13a91e1dba9f0de34.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b7vcm2f2gc4n6"
-path="res://.godot/imported/Appear (44x30).png-ba6bb81f013ac3440a11667a2ec7d7c5.ctex"
+path="res://.godot/imported/appear (44x30).png-a42511a2f93808b2580c6f6a07347066.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Enemies/Ghost/Appear (44x30).png"
-dest_files=["res://.godot/imported/Appear (44x30).png-ba6bb81f013ac3440a11667a2ec7d7c5.ctex"]
+source_file="res://assets/enemies/ghost/appear (44x30).png"
+dest_files=["res://.godot/imported/appear (44x30).png-a42511a2f93808b2580c6f6a07347066.ctex"]
 
 [params]
 
